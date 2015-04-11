@@ -8,6 +8,7 @@ Node.js stream plugin for the [Unexpected](https://unexpectedjs.github.io/) asse
 [![Coverage Status](https://coveralls.io/repos/unexpectedjs/unexpected-stream/badge.png)](https://coveralls.io/r/unexpectedjs/unexpected-stream)
 [![Dependency Status](https://david-dm.org/unexpectedjs/unexpected-stream.png)](https://david-dm.org/unexpectedjs/unexpected-stream)
 
+![Unexpected stream](http://www.lolzhumor.com/wp-content/uploads/2013/04/sOnmv1G.png)
 
 ```js
 it('should produce the correct output', function () {
