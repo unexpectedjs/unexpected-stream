@@ -3,10 +3,10 @@ unexpected-stream
 
 Node.js stream plugin for the [Unexpected](https://unexpectedjs.github.io/) assertion library (version 7+ required).
 
-[![NPM version](https://badge.fury.io/js/unexpected-stream.png)](http://badge.fury.io/js/unexpected-stream)
-[![Build Status](https://travis-ci.org/unexpectedjs/unexpected-stream.png?branch=master)](https://travis-ci.org/unexpectedjs/unexpected-stream)
-[![Coverage Status](https://coveralls.io/repos/unexpectedjs/unexpected-stream/badge.png)](https://coveralls.io/r/unexpectedjs/unexpected-stream)
-[![Dependency Status](https://david-dm.org/unexpectedjs/unexpected-stream.png)](https://david-dm.org/unexpectedjs/unexpected-stream)
+[![NPM version](https://badge.fury.io/js/unexpected-stream.svg)](http://badge.fury.io/js/unexpected-stream)
+[![Build Status](https://travis-ci.org/unexpectedjs/unexpected-stream.svg?branch=master)](https://travis-ci.org/unexpectedjs/unexpected-stream)
+[![Coverage Status](https://coveralls.io/repos/unexpectedjs/unexpected-stream/badge.svg)](https://coveralls.io/r/unexpectedjs/unexpected-stream)
+[![Dependency Status](https://david-dm.org/unexpectedjs/unexpected-stream.svg)](https://david-dm.org/unexpectedjs/unexpected-stream)
 
 ![Unexpected stream](http://www.lolzhumor.com/wp-content/uploads/2013/04/sOnmv1G.png)
 
