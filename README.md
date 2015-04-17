@@ -4,7 +4,7 @@ unexpected-stream
 Node.js stream plugin for the [Unexpected](https://unexpectedjs.github.io/) assertion library (version 7+ required).
 
 [![NPM version](https://badge.fury.io/js/unexpected-stream.png)](http://badge.fury.io/js/unexpected-stream)
-[![Build Status](https://travis-ci.org/unexpectedjs/unexpected-stream.png)](https://travis-ci.org/unexpectedjs/unexpected-stream)
+[![Build Status](https://travis-ci.org/unexpectedjs/unexpected-stream.png?branch=master)](https://travis-ci.org/unexpectedjs/unexpected-stream)
 [![Coverage Status](https://coveralls.io/repos/unexpectedjs/unexpected-stream/badge.png)](https://coveralls.io/r/unexpectedjs/unexpected-stream)
 [![Dependency Status](https://david-dm.org/unexpectedjs/unexpected-stream.png)](https://david-dm.org/unexpectedjs/unexpected-stream)
 
