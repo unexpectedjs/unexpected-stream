@@ -4,6 +4,9 @@
   "description": "node.js streams plugin for the Unexpected assertion library",
   "main": "lib/unexpectedStream.js",
   "dependencies": {},
+  "peerDependencies": {
+    "unexpected": "7 | 8"
+  },
   "devDependencies": {
     "coveralls": "2.11.2",
     "istanbul": "0.3.13",
