@@ -5,7 +5,7 @@
   "main": "lib/unexpectedStream.js",
   "dependencies": {},
   "peerDependencies": {
-    "unexpected": "7 | 8"
+    "unexpected": "7 || 8"
   },
   "devDependencies": {
     "coveralls": "2.11.2",
