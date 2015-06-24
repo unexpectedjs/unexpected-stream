@@ -17,6 +17,18 @@ describe('unexpected-stream', function () {
         it('should buffer up the output of a readable stream that outputs strings', function () {
             return expect(fs.createReadStream(fooTxtPath, {encoding: 'utf-8'}), 'to yield output satisfying', 'to equal', 'foobarquux\n');
         });
+
+        it('fails with a diff', function () {
+            return expect(
+                expect(fs.createReadStream(fooTxtPath, {encoding: 'utf-8'}), 'to yield output satisfying', 'to equal', 'blah\n'),
+                'to be rejected with',
+                    "expected ReadStream to yield output satisfying 'to equal', 'blah\\n'\n" +
+                    "  expected 'foobarquux\\n' to equal 'blah\\n'\n" +
+                    "\n" +
+                    "  -foobarquux\n" +
+                    "  +blah"
+            );
+        });
     });
 
     describe('to yield chunks', function () {
