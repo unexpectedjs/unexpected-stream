@@ -74,5 +74,100 @@ describe('unexpected-stream', function () {
                 new Buffer('foobarquux\n', 'utf-8')
             );
         });
+
+        describe('with a Buffer instance', function () {
+            it('should succeed', function () {
+                return expect(
+                    new Buffer('foobarquux\n', 'utf-8'),
+                    'when piped through',
+                    zlib.createGzip(),
+                    'to yield output satisfying',
+                    new Buffer([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C, 0x2A, 0x2C, 0x2D, 0xAD, 0xE0, 0x02, 0x00, 0xC8, 0x99, 0x6F, 0x44, 0x0B, 0x00, 0x00, 0x00])
+                );
+            });
+
+            it('fails with a diff', function () {
+                return expect(
+                    expect(
+                        new Buffer('foobarqux', 'utf-8'),
+                        'when piped through',
+                        zlib.createGzip(),
+                        'to yield output satisfying',
+                        new Buffer([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C, 0x2A, 0x2C, 0x2D, 0xAD, 0xE0, 0x02, 0x00, 0xC8, 0x99, 0x6F, 0x44, 0x0B, 0x00, 0x00, 0x00])
+
+                    ),
+                    'to be rejected with',
+                        "expected Buffer([0x66, 0x6F, 0x6F, 0x62, 0x61, 0x72, 0x71, 0x75, 0x78])\n" +
+                        "when piped through Gzip, 'to yield output satisfying', Buffer([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C /* 15 more */ ])\n" +
+                        "  expected Gzip\n" +
+                        "  to yield output satisfying Buffer([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C /* 15 more */ ])\n" +
+                        "    expected Buffer([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C /* 13 more */ ])\n" +
+                        "    to satisfy Buffer([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C /* 15 more */ ])\n" +
+                        "\n" +
+                        "     1F 8B 08 00 00 00 00 00 00 03 4B CB CF 4F 4A 2C  │..........K..OJ,│\n" +
+                        "    -2A 2C AD 00 00 FA 8C B8 C4 09 00 00 00           │*,...........│\n" +
+                        "    +2A 2C 2D AD E0 02 00 C8 99 6F 44 0B 00 00 00     │*,-......oD....│"
+                );
+            });
+        });
+
+        describe('with a string', function () {
+            it('should succeed', function () {
+                return expect(
+                    'foobarquux\n',
+                    'when piped through',
+                    zlib.createGzip(),
+                    'to yield output satisfying',
+                    new Buffer([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C, 0x2A, 0x2C, 0x2D, 0xAD, 0xE0, 0x02, 0x00, 0xC8, 0x99, 0x6F, 0x44, 0x0B, 0x00, 0x00, 0x00])
+                );
+            });
+        });
+
+        describe('with an array of strings', function () {
+            it('should succeed', function () {
+                return expect(
+                    [ 'foo', 'bar', 'quux\n' ],
+                    'when piped through',
+                    zlib.createGzip(),
+                    'to yield output satisfying',
+                    new Buffer([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C, 0x2A, 0x2C, 0x2D, 0xAD, 0xE0, 0x02, 0x00, 0xC8, 0x99, 0x6F, 0x44, 0x0B, 0x00, 0x00, 0x00])
+                );
+            });
+
+            it('fails with a diff', function () {
+                return expect(
+                    expect(
+                        [ 'f', 'oo' ],
+                        'when piped through',
+                        zlib.createGzip(),
+                        'to yield output satisfying',
+                        new Buffer([0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C])
+
+                    ),
+                    'to be rejected with',
+                        "expected [ 'f', 'oo' ]\n" +
+                        "when piped through Gzip, 'to yield output satisfying', Buffer([0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C])\n" +
+                        "  expected Gzip to yield output satisfying Buffer([0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C])\n" +
+                        "    expected Buffer([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0xCB, 0xCF, 0x07, 0x00, 0x21 /* 7 more */ ])\n" +
+                        "    to satisfy Buffer([0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C])\n" +
+                        "\n" +
+                        "    -1F 8B 08 00 00 00 00 00 00 03 4B CB CF 07 00 21  │..........K....!│\n" +
+                        "    -65 73 8C 03 00 00 00                             │es.....│\n" +
+                        "    +03 4B CB CF 4F 4A 2C                             │.K..OJ,│"
+                );
+            });
+        });
+
+        describe('with an array of Buffer instances', function () {
+            it('should succeed', function () {
+                return expect(
+                    [ new Buffer('foo', 'utf-8'), new Buffer('bar', 'utf-8'), new Buffer('quux\n', 'utf-8') ],
+                    'when piped through',
+                    zlib.createGzip(),
+                    'to yield output satisfying',
+                    new Buffer([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C, 0x2A, 0x2C, 0x2D, 0xAD, 0xE0, 0x02, 0x00, 0xC8, 0x99, 0x6F, 0x44, 0x0B, 0x00, 0x00, 0x00])
+                );
+            });
+        });
     });
 });
