@@ -43,11 +43,10 @@
 <a href="https://coveralls.io/r/unexpectedjs/unexpected-stream"><img src="https://coveralls.io/repos/unexpectedjs/unexpected-stream/badge.svg" alt="Coverage Status"></a>
 <a href="https://david-dm.org/unexpectedjs/unexpected-stream"><img src="https://david-dm.org/unexpectedjs/unexpected-stream.svg" alt="Dependency Status"></a></p>
 <div class="code lang-javascript">
-  <div><span style="color: #FFAA27">var</span>&nbsp;zlib&nbsp;<span style="color: #3CDAFF">=</span>&nbsp;require<span style="color: #999">(</span><span style="color: #3CDAFF">'zlib'</span><span style="color: #999">);</span></div>
   <div><span style="color: #FFAA27">return</span>&nbsp;expect<span style="color: #999">(</span></div>
   <div>&nbsp;&nbsp;<span style="color: #999">[</span><span style="color: #3CDAFF">'abc'</span><span style="color: #999">,</span>&nbsp;<span style="color: #3CDAFF">'def'</span><span style="color: #999">],</span></div>
   <div>&nbsp;&nbsp;<span style="color: #3CDAFF">'when&nbsp;piped&nbsp;through'</span><span style="color: #999">,</span></div>
-  <div>&nbsp;&nbsp;<span style="color: #FFAA27">new</span>&nbsp;zlib<span style="color: #999">.</span>Gzip<span style="color: #999">(),</span></div>
+  <div>&nbsp;&nbsp;require<span style="color: #999">(</span><span style="color: #3CDAFF">'zlib'</span><span style="color: #999">).</span>Gzip<span style="color: #999">(),</span></div>
   <div>&nbsp;&nbsp;<span style="color: #3CDAFF">'to&nbsp;yield&nbsp;output&nbsp;satisfying'</span><span style="color: #999">,</span></div>
   <div>&nbsp;&nbsp;Buffer<span style="color: #999">([</span><span style="color: white">0x04</span><span style="color: #999">,</span>&nbsp;<span style="color: white">0x08</span><span style="color: #999">])</span></div>
   <div><span style="color: #999">);</span></div>
