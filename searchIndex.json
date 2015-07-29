@@ -1,0 +1,10 @@
+[
+  {
+    "label": "to yield chunks satisfying (Stream)",
+    "url": "/assertions/Stream/to-yield-chunks-satisfying/"
+  },
+  {
+    "label": "to yield output satisfying (Stream)",
+    "url": "/assertions/Stream/to-yield-output-satisfying/"
+  }
+]

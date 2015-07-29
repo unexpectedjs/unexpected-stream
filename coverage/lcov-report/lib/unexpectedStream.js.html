@@ -1,0 +1,282 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for lib/unexpectedStream.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../prettify.css">
+    <link rel="stylesheet" href="../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">lib/unexpectedStream.js</span></h1>
+    <h2>
+        Statements: <span class="metric">97.56% <small>(40 / 41)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">85.71% <small>(18 / 21)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(14 / 14)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">97.5% <small>(39 / 40)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">lib/</a> &#187; unexpectedStream.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">313</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">8</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">22</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">12</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">module.exports = {
+    name: 'unexpected-stream',
+    installInto: function (expect) {
+        expect.addType({
+            name: 'Stream',
+            base: 'object',
+            inspect: function (obj, depth, output, inspect) {
+                return output.text(obj.constructor.name, 'jsFunctionName');
+            },
+            identify: function (obj) {
+                return obj &amp;&amp; typeof obj.on === 'function' &amp;&amp; (obj._readableState || <span class="branch-3 cbranch-no" title="branch not covered" >typeof obj.readable === 'boolean' </span>|| <span class="branch-4 cbranch-no" title="branch not covered" >typeof obj.writable === 'boolean')</span>;
+            }
+        });
+&nbsp;
+        expect.addAssertion(['Stream', 'string', 'Buffer', 'array'], 'when piped through', function (expect, subject, value) {
+            this.errorMode = 'nested';
+&nbsp;
+            var extraArgs = Array.prototype.slice.call(arguments, 3);
+            return expect.promise(function (resolve, reject) {
+                var pipeThroughStreams = Array.isArray(value) ? value : [ value ];
+                var subjectType = expect.findTypeOf(subject);
+                var result;
+                if (subjectType.is('Stream')) {
+                    result = subject;
+                    subject.on('error', reject);
+                } else {
+                    // string, Buffer, or array
+                    (Array.isArray(subject) ? subject : [ subject ]).forEach(function (chunk) {
+                        pipeThroughStreams[0].write(chunk);
+                    });
+                    pipeThroughStreams[0].end();
+                }
+&nbsp;
+                pipeThroughStreams.forEach(function (pipeThroughStream) {
+                    pipeThroughStream.on('error', reject);
+                    result = result ? result.pipe(pipeThroughStream) : pipeThroughStream;
+                });
+&nbsp;
+                return resolve(expect.apply(expect, [result, 'to satisfy assertion'].concat(extraArgs)));
+            });
+        });
+&nbsp;
+        expect.addAssertion('to yield (output|chunks|objects) satisfying', function (expect, subject) {
+            this.errorMode = 'nested';
+&nbsp;
+            var extraArgs = Array.prototype.slice.call(arguments, 2),
+                mustConcat = this.alternations[0] === 'output';
+&nbsp;
+            expect(subject, 'to have property', 'readable', true);
+&nbsp;
+            return expect.promise(function (resolve, reject) {
+                var chunks = [];
+                subject.on('data', function (chunk) {
+                    chunks.push(chunk);
+                }).on('end', function () {
+                    var result;
+                    if (mustConcat) {
+                        if (chunks.length &gt; 0 &amp;&amp; chunks.every(function (chunk) { return typeof chunk === 'string'; })) {
+                            result = chunks.join('');
+                        } else {
+                            // chunks or objects (object mode)
+                            result = Buffer.concat(chunks.map(function (chunk) {
+                                <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof chunk === 'string') {
+<span class="cstat-no" title="statement not covered" >                                    return new Buffer(chunk, 'utf-8');</span>
+                                } else {
+                                    return chunk;
+                                }
+                            }));
+                        }
+                    } else {
+                        result = chunks;
+                    }
+                    resolve(result);
+                }).on('error', reject);
+            }).then(function (result) {
+                return expect.apply(expect, [result, 'to satisfy assertion'].concat(extraArgs));
+            });
+        });
+    }
+};</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Tue Jul 28 2015 23:24:24 GMT+0200 (CEST)</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>

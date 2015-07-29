@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="../../../static/normalize.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../../../static/main.css" type="text/css" media="screen" />
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="../../../static/bug-icon-black.ico">
+    <title>Stream - to yield output satisfying</title>
+</head>
+<body class="sidebar-hidden has-sidebar">
+    <header>
+        <div class="logo-icon"></div>
+        <nav>
+            <ul>
+                <li class="menu-toggle-item">
+                    <button class="menu-toggle" onclick="toggleSidebar()"></button>
+                </li>
+                
+                <li class=""><a href="../../..">unexpected-stream</a></li>
+                
+                
+                <li class="active"><a href="../to-yield-chunks-satisfying">Assertions</a></li>
+                
+                
+            </ul>
+        </nav>
+        <div class="search" style="visibility: hidden">
+            <input id="search" placeholder="Search..." value="">
+            <div id="searchDropDown" class="dropDown">
+                <ul id="searchResults"></ul>
+            </div>
+        </div>
+    </header>
+
+<section id="assertions">
+    <nav id="assertion-menu" class="sidebar js-remember-scroll-position">
+    <ul>
+        
+        <li>
+            <h3>Stream</h3>
+            <ul>
+                
+                <li class="">
+                    <a href="../to-yield-chunks-satisfying">to yield chunks satisfying</a>
+                </li>
+                
+                <li class="active">
+                    <a href="">to yield output satisfying</a>
+                </li>
+                
+            </ul>
+        </li>
+        
+    </ul>
+</nav>
+
+    <div class="main" tabindex="-1">
+        <div class="content">
+            <p>Asserts that a stream produces output <a href="http://unexpected.js.org/assertions/any/to-satisfy/">satisfying</a> a spec.</p>
+<p>The output will be concatenated to either a single Buffer or string, depending on what the stream outputs.</p>
+<div class="code lang-javascript">
+  <div><span style="color: #a71d5d">return</span>&nbsp;<span style="color: #000000">expect</span><span style="color: #000000">(</span></div>
+  <div>&nbsp;&nbsp;<span style="color: #000000">require</span><span style="color: #000000">(</span><span style="color: #df5000">'fs'</span><span style="color: #000000">).</span><span style="color: #000000">createReadStream</span><span style="color: #000000">(</span><span style="color: #df5000">'README.md'</span><span style="color: #000000">,</span>&nbsp;<span style="color: #000000">{</span>&nbsp;encoding<span style="color: #000000">:</span>&nbsp;<span style="color: #df5000">'utf-8'</span>&nbsp;<span style="color: #000000">}),</span></div>
+  <div>&nbsp;&nbsp;<span style="color: #df5000">'to&nbsp;yield&nbsp;output&nbsp;satisfying'</span><span style="color: #000000">,</span></div>
+  <div>&nbsp;&nbsp;<span style="color: #183691">/Node\.js&nbsp;stream&nbsp;plugin/</span></div>
+  <div><span style="color: #000000">);</span></div>
+</div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    baseUrl = '../../..';
+</script>
+<script type="text/javascript" src="../../../static/toggleSidebar.js"></script>
+<script type="text/javascript" src="../../../static/rememberScrollPosition.js"></script>
+<script type="text/javascript" src="../../../static/focusMain.js"></script>
+<script type="text/javascript" src="../../../static/search.js"></script>
+</body>
+</html>
+
