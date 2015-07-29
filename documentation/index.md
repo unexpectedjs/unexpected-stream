@@ -17,11 +17,10 @@ Node.js stream plugin for the [Unexpected](https://unexpected.js.org/) assertion
 [![Dependency Status](https://david-dm.org/unexpectedjs/unexpected-stream.svg)](https://david-dm.org/unexpectedjs/unexpected-stream)
 
 ```js#async:true
-var zlib = require('zlib');
 return expect(
   ['abc', 'def'],
   'when piped through',
-  new zlib.Gzip(),
+  require('zlib').Gzip(),
   'to yield output satisfying',
   Buffer([0x04, 0x08])
 );
