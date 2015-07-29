@@ -4,8 +4,7 @@
   "description": "node.js streams plugin for the Unexpected assertion library",
   "main": "lib/unexpectedStream.js",
   "dependencies": {
-    "minimist": "1.1.2",
-    "unexpected-documentation-site-generator": "2.6.0"
+    "minimist": "1.1.2"
   },
   "peerDependencies": {
     "unexpected": "7 || 8 || 9"
@@ -15,7 +14,8 @@
     "istanbul": "0.3.13",
     "jshint": "2.6.3",
     "mocha": "2.2.5",
-    "unexpected": "9.0.0"
+    "unexpected": "9.0.0",
+    "unexpected-documentation-site-generator": "2.6.2"
   },
   "scripts": {
     "lint": "jshint .",
