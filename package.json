@@ -3,7 +3,10 @@
   "version": "1.2.0",
   "description": "node.js streams plugin for the Unexpected assertion library",
   "main": "lib/unexpectedStream.js",
-  "dependencies": {},
+  "dependencies": {
+    "minimist": "1.1.2",
+    "unexpected-documentation-site-generator": "2.5.2"
+  },
   "peerDependencies": {
     "unexpected": "7 || 8 || 9"
   },
@@ -18,7 +21,10 @@
     "lint": "jshint .",
     "test": "mocha && npm run lint",
     "travis": "npm test && npm run coverage && <coverage/lcov.info coveralls",
-    "coverage": "NODE_ENV=development istanbul cover _mocha -- --reporter dot && echo google-chrome coverage/lcov-report/index.html"
+    "coverage": "NODE_ENV=development istanbul cover _mocha -- --reporter dot && echo google-chrome coverage/lcov-report/index.html",
+    "generate-site": "node ./generate-site.js",
+    "update-examples": "node ./generate-site.js --update-examples && npm run generate-site",
+    "deploy-site": "deploy-site"
   },
   "repository": {
     "type": "git",
