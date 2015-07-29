@@ -304,11 +304,10 @@ describe("documentation tests", function () {
     it("index.md contains correct examples", function () {
         var testPromises = [];
         testPromises.push(expect.promise(function () {
-            var zlib = require('zlib');
             return expect(
               ['abc', 'def'],
               'when piped through',
-              new zlib.Gzip(),
+              require('zlib').Gzip(),
               'to yield output satisfying',
               Buffer([0x04, 0x08])
             );
@@ -316,11 +315,10 @@ describe("documentation tests", function () {
             return expect.promise(function () {
                 expect.fail(function (output) {
                     output.error("expected:").nl();
-                    output.code("var zlib = require('zlib');").nl();
                     output.code("return expect(").nl();
                     output.code("  ['abc', 'def'],").nl();
                     output.code("  'when piped through',").nl();
-                    output.code("  new zlib.Gzip(),").nl();
+                    output.code("  require('zlib').Gzip(),").nl();
                     output.code("  'to yield output satisfying',").nl();
                     output.code("  Buffer([0x04, 0x08])").nl();
                     output.code(");").nl();
