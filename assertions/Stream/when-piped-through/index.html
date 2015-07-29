@@ -1,0 +1,176 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+    <link rel="stylesheet" href="../../../static/normalize.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="../../../static/main.css" type="text/css" media="screen" />
+    <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="../../../static/bug-icon-black.ico">
+    <title>Stream - when piped through</title>
+</head>
+<body class="sidebar-hidden has-sidebar">
+    <header>
+        <div class="logo-icon"></div>
+        <nav>
+            <ul>
+                <li class="menu-toggle-item">
+                    <button class="menu-toggle" onclick="toggleSidebar()"></button>
+                </li>
+                
+                <li class=""><a href="../../..">unexpected-stream</a></li>
+                
+                
+                <li class="active"><a href="../../string/when-piped-through">Assertions</a></li>
+                
+                
+            </ul>
+        </nav>
+        <div class="search" style="visibility: hidden">
+            <input id="search" placeholder="Search..." value="">
+            <div id="searchDropDown" class="dropDown">
+                <ul id="searchResults"></ul>
+            </div>
+        </div>
+    </header>
+
+<section id="assertions">
+    <nav id="assertion-menu" class="sidebar js-remember-scroll-position">
+    <ul>
+        
+        <li>
+            <h3>string</h3>
+            <ul>
+                
+                <li class="">
+                    <a href="../../string/when-piped-through">when piped through</a>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <li>
+            <h3>Stream</h3>
+            <ul>
+                
+                <li class="">
+                    <a href="../to-yield-chunks-satisfying">to yield chunks satisfying</a>
+                </li>
+                
+                <li class="">
+                    <a href="../to-yield-output-satisfying">to yield output satisfying</a>
+                </li>
+                
+                <li class="active">
+                    <a href="">when piped through</a>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <li>
+            <h3>array</h3>
+            <ul>
+                
+                <li class="">
+                    <a href="../../array/when-piped-through">when piped through</a>
+                </li>
+                
+            </ul>
+        </li>
+        
+        <li>
+            <h3>Buffer</h3>
+            <ul>
+                
+                <li class="">
+                    <a href="../../Buffer/when-piped-through">when piped through</a>
+                </li>
+                
+            </ul>
+        </li>
+        
+    </ul>
+</nav>
+
+    <div class="main" tabindex="-1">
+        <div class="content">
+            <p>Pipe the output of a readable stream through a transform stream or a sequence
+of transform streams, then delegate to another assertion using the last stream
+as the subject.</p>
+<p>It&#39;s intended to be used with the <a href="to-yield-output-satisfying/">to yield output satisfying</a> assertion:</p>
+<div class="code lang-javascript">
+  <div><span style="color: #a71d5d">return</span>&nbsp;<span style="color: #000000">expect</span><span style="color: #000000">(</span></div>
+  <div>&nbsp;&nbsp;<span style="color: #000000">require</span><span style="color: #000000">(</span><span style="color: #df5000">'fs'</span><span style="color: #000000">).</span><span style="color: #000000">createReadStream</span><span style="color: #000000">(</span><span style="color: #df5000">'LICENSE'</span><span style="color: #000000">),</span></div>
+  <div>&nbsp;&nbsp;<span style="color: #df5000">'when&nbsp;piped&nbsp;through'</span><span style="color: #000000">,</span></div>
+  <div>&nbsp;&nbsp;<span style="color: #000000">require</span><span style="color: #000000">(</span><span style="color: #df5000">'zlib'</span><span style="color: #000000">).</span><span style="color: #000000">Gzip</span><span style="color: #000000">(),</span></div>
+  <div>&nbsp;&nbsp;<span style="color: #df5000">'to&nbsp;yield&nbsp;output&nbsp;satisfying'</span><span style="color: #000000">,</span></div>
+  <div>&nbsp;&nbsp;<span style="color: #df5000">'to&nbsp;have&nbsp;length'</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">792</span></div>
+  <div><span style="color: #000000">);</span></div>
+</div><p>Example with multiple transform streams:</p>
+<div class="code lang-javascript">
+  <div><span style="color: #a71d5d">return</span>&nbsp;<span style="color: #000000">expect</span><span style="color: #000000">(</span></div>
+  <div>&nbsp;&nbsp;<span style="color: #000000">require</span><span style="color: #000000">(</span><span style="color: #df5000">'fs'</span><span style="color: #000000">).</span><span style="color: #000000">createReadStream</span><span style="color: #000000">(</span><span style="color: #df5000">'LICENSE'</span><span style="color: #000000">),</span></div>
+  <div>&nbsp;&nbsp;<span style="color: #df5000">'when&nbsp;piped&nbsp;through'</span><span style="color: #000000">,</span></div>
+  <div>&nbsp;&nbsp;<span style="color: #000000">[</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #000000">require</span><span style="color: #000000">(</span><span style="color: #df5000">'zlib'</span><span style="color: #000000">).</span><span style="color: #000000">Gzip</span><span style="color: #000000">(),</span></div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: #000000">require</span><span style="color: #000000">(</span><span style="color: #df5000">'zlib'</span><span style="color: #000000">).</span><span style="color: #000000">Gunzip</span><span style="color: #000000">()</span></div>
+  <div>&nbsp;&nbsp;<span style="color: #000000">],</span></div>
+  <div>&nbsp;&nbsp;<span style="color: #df5000">'to&nbsp;yield&nbsp;output&nbsp;satisfying'</span><span style="color: #000000">,</span></div>
+  <div>&nbsp;&nbsp;<span style="color: #df5000">'when&nbsp;decoded&nbsp;as'</span><span style="color: #000000">,</span>&nbsp;<span style="color: #df5000">'ascii'</span><span style="color: #000000">,</span></div>
+  <div>&nbsp;&nbsp;<span style="color: #df5000">'not&nbsp;to&nbsp;contain'</span><span style="color: #000000">,</span>&nbsp;<span style="color: #df5000">'IMPLIED&nbsp;WARRANTIES'</span></div>
+  <div><span style="color: #000000">);</span></div>
+</div><div class="output">
+  <div><span style="color: red; font-weight: bold">expected</span>&nbsp;<span style="color: #795da3">ReadStream</span></div>
+  <div><span style="color: red; font-weight: bold">when&nbsp;piped&nbsp;through</span>&nbsp;[&nbsp;<span style="color: #795da3">Gzip</span>,&nbsp;<span style="color: #795da3">Gunzip</span>&nbsp;],&nbsp;<span style="color: #df5000">'to&nbsp;yield&nbsp;output&nbsp;satisfying'</span>,&nbsp;<span style="color: #df5000">'when&nbsp;decoded&nbsp;as'</span>,&nbsp;<span style="color: #df5000">'ascii'</span>,&nbsp;<span style="color: #df5000">'not&nbsp;to&nbsp;contain'</span>,&nbsp;<span style="color: #df5000">'IMPLIED&nbsp;WARRANTIES'</span></div>
+  <div>&nbsp;&nbsp;<div style="display: inline-block; vertical-align: top">
+  <div><span style="color: red; font-weight: bold">expected</span>&nbsp;<span style="color: #795da3">Gunzip</span>&nbsp;<span style="color: red; font-weight: bold">to&nbsp;yield&nbsp;output&nbsp;satisfying</span>&nbsp;<span style="color: #df5000">'when&nbsp;decoded&nbsp;as'</span>,&nbsp;<span style="color: #df5000">'ascii'</span>,&nbsp;<span style="color: #df5000">'not&nbsp;to&nbsp;contain'</span>,&nbsp;<span style="color: #df5000">'IMPLIED&nbsp;WARRANTIES'</span></div>
+  <div>&nbsp;&nbsp;<div style="display: inline-block; vertical-align: top">
+  <div><span style="color: red; font-weight: bold">expected</span>&nbsp;<span style="color: #000000">Buffer</span><span style="color: #000000">([</span><span style="color: #0086b3">0x43</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x6F</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x70</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x79</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x72</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x69</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x67</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x68</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x74</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x20</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x28</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x63</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x29</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x20</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x32</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x30</span>&nbsp;<span style="color: #969896">/*&nbsp;1478&nbsp;more&nbsp;*/</span>&nbsp;<span style="color: #000000">])</span></div>
+  <div><span style="color: red; font-weight: bold">when&nbsp;decoded&nbsp;as</span>&nbsp;<span style="color: #df5000">'ascii'</span>&nbsp;<span style="color: red; font-weight: bold">not&nbsp;to&nbsp;contain</span>&nbsp;<span style="color: #df5000">'IMPLIED&nbsp;WARRANTIES'</span></div>
+  <div>&nbsp;</div>
+  <div>Copyright&nbsp;(c)&nbsp;2015,&nbsp;Andreas&nbsp;Lind</div>
+  <div>All&nbsp;rights&nbsp;reserved.</div>
+  <div>&nbsp;</div>
+  <div>Redistribution&nbsp;and&nbsp;use&nbsp;in&nbsp;source&nbsp;and&nbsp;binary&nbsp;forms,&nbsp;with&nbsp;or&nbsp;without</div>
+  <div>modification,&nbsp;are&nbsp;permitted&nbsp;provided&nbsp;that&nbsp;the&nbsp;following&nbsp;conditions&nbsp;are</div>
+  <div>met:</div>
+  <div>&nbsp;</div>
+  <div>&nbsp;&nbsp;*&nbsp;Redistributions&nbsp;of&nbsp;source&nbsp;code&nbsp;must&nbsp;retain&nbsp;the&nbsp;above&nbsp;copyright</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;notice,&nbsp;this&nbsp;list&nbsp;of&nbsp;conditions&nbsp;and&nbsp;the&nbsp;following&nbsp;disclaimer.</div>
+  <div>&nbsp;&nbsp;*&nbsp;Redistributions&nbsp;in&nbsp;binary&nbsp;form&nbsp;must&nbsp;reproduce&nbsp;the&nbsp;above&nbsp;copyright</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;notice,&nbsp;this&nbsp;list&nbsp;of&nbsp;conditions&nbsp;and&nbsp;the&nbsp;following&nbsp;disclaimer&nbsp;in</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;documentation&nbsp;and/or&nbsp;other&nbsp;materials&nbsp;provided&nbsp;with&nbsp;the</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;distribution.</div>
+  <div>&nbsp;&nbsp;*&nbsp;Neither&nbsp;the&nbsp;name&nbsp;of&nbsp;the&nbsp;author&nbsp;nor&nbsp;the&nbsp;names&nbsp;of&nbsp;contributors&nbsp;may</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;be&nbsp;used&nbsp;to&nbsp;endorse&nbsp;or&nbsp;promote&nbsp;products&nbsp;derived&nbsp;from&nbsp;this</div>
+  <div>&nbsp;&nbsp;&nbsp;&nbsp;software&nbsp;without&nbsp;specific&nbsp;prior&nbsp;written&nbsp;permission.</div>
+  <div>&nbsp;</div>
+  <div>THIS&nbsp;SOFTWARE&nbsp;IS&nbsp;PROVIDED&nbsp;BY&nbsp;THE&nbsp;COPYRIGHT&nbsp;HOLDERS&nbsp;AND&nbsp;CONTRIBUTORS&nbsp;&quot;AS</div>
+  <div>IS&quot;&nbsp;AND&nbsp;ANY&nbsp;EXPRESS&nbsp;OR&nbsp;<span style="background-color: red; color: white">IMPLIED&nbsp;WARRANTIES</span>,&nbsp;INCLUDING,&nbsp;BUT&nbsp;NOT&nbsp;LIMITED</div>
+  <div>TO,&nbsp;THE&nbsp;<span style="background-color: red; color: white">IMPLIED&nbsp;WARRANTIES</span>&nbsp;OF&nbsp;MERCHANTABILITY&nbsp;AND&nbsp;FITNESS&nbsp;FOR&nbsp;A</div>
+  <div>PARTICULAR&nbsp;PURPOSE&nbsp;ARE&nbsp;DISCLAIMED.&nbsp;IN&nbsp;NO&nbsp;EVENT&nbsp;SHALL&nbsp;THE&nbsp;COPYRIGHT</div>
+  <div>HOLDER&nbsp;OR&nbsp;CONTRIBUTORS&nbsp;BE&nbsp;LIABLE&nbsp;FOR&nbsp;ANY&nbsp;DIRECT,&nbsp;INDIRECT,&nbsp;INCIDENTAL,</div>
+  <div>SPECIAL,&nbsp;EXEMPLARY,&nbsp;OR&nbsp;CONSEQUENTIAL&nbsp;DAMAGES&nbsp;(INCLUDING,&nbsp;BUT&nbsp;NOT</div>
+  <div>LIMITED&nbsp;TO,&nbsp;PROCUREMENT&nbsp;OF&nbsp;SUBSTITUTE&nbsp;GOODS&nbsp;OR&nbsp;SERVICES;&nbsp;LOSS&nbsp;OF&nbsp;USE,</div>
+  <div>DATA,&nbsp;OR&nbsp;PROFITS;&nbsp;OR&nbsp;BUSINESS&nbsp;INTERRUPTION)&nbsp;HOWEVER&nbsp;CAUSED&nbsp;AND&nbsp;ON&nbsp;ANY</div>
+  <div>THEORY&nbsp;OF&nbsp;LIABILITY,&nbsp;WHETHER&nbsp;IN&nbsp;CONTRACT,&nbsp;STRICT&nbsp;LIABILITY,&nbsp;OR&nbsp;TORT</div>
+  <div>(INCLUDING&nbsp;NEGLIGENCE&nbsp;OR&nbsp;OTHERWISE)&nbsp;ARISING&nbsp;IN&nbsp;ANY&nbsp;WAY&nbsp;OUT&nbsp;OF&nbsp;THE&nbsp;USE</div>
+  <div>OF&nbsp;THIS&nbsp;SOFTWARE,&nbsp;EVEN&nbsp;IF&nbsp;ADVISED&nbsp;OF&nbsp;THE&nbsp;POSSIBILITY&nbsp;OF&nbsp;SUCH&nbsp;DAMAGE.</div>
+  <div>&nbsp;</div>
+</div></div>
+</div></div>
+</div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    baseUrl = '../../..';
+</script>
+<script type="text/javascript" src="../../../static/toggleSidebar.js"></script>
+<script type="text/javascript" src="../../../static/rememberScrollPosition.js"></script>
+<script type="text/javascript" src="../../../static/focusMain.js"></script>
+<script type="text/javascript" src="../../../static/search.js"></script>
+</body>
+</html>
+
