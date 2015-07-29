@@ -7,6 +7,8 @@ repository: https://github.com/unexpectedjs/unexpected-stream
 
 # Unexpected-stream
 
+Node.js stream plugin for the [Unexpected](https://unexpected.js.org/) assertion library (version 7+ required).
+
 ![Unexpected stream](logoImage.png)
 
 [![NPM version](https://badge.fury.io/js/unexpected-stream.svg)](http://badge.fury.io/js/unexpected-stream)
