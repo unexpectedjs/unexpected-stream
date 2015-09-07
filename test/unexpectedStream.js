@@ -9,6 +9,8 @@ describe('unexpected-stream', function () {
     var expect = unexpected.clone().installPlugin(require('../lib/unexpectedStream')),
         fooTxtPath = pathModule.resolve(__dirname, '..', 'testdata', 'foo.txt');
 
+    expect.output.preferredWidth = 150;
+
     describe('to yield output', function () {
         it('should buffer up the output of a readable stream that outputs buffers', function () {
             return expect(fs.createReadStream(fooTxtPath), 'to yield output satisfying', new Buffer('foobarquux\n', 'utf-8'));
@@ -145,8 +147,7 @@ describe('unexpected-stream', function () {
 
                     ),
                     'to be rejected with',
-                        "expected [ 'f', 'oo' ]\n" +
-                        "when piped through Gzip, 'to yield output satisfying', Buffer([0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C])\n" +
+                        "expected [ 'f', 'oo' ] when piped through Gzip, 'to yield output satisfying', Buffer([0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C])\n" +
                         "  expected Gzip to yield output satisfying Buffer([0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C])\n" +
                         "    expected Buffer([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0xCB, 0xCF, 0x07, 0x00, 0x21 /* 7 more */ ])\n" +
                         "    to satisfy Buffer([0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C])\n" +

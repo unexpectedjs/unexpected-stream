@@ -27,7 +27,8 @@ return expect(
 ```
 
 ```output
-expected [ 'abc', 'def' ] when piped through Gzip, 'to yield output satisfying', Buffer([0x04, 0x08])
+expected [ 'abc', 'def' ]
+when piped through Gzip, 'to yield output satisfying', Buffer([0x04, 0x08])
   expected Gzip to yield output satisfying Buffer([0x04, 0x08])
     expected Buffer([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0x4C, 0x4A, 0x4E, 0x49, 0x4D /* 10 more */ ])
     to satisfy Buffer([0x04, 0x08])
