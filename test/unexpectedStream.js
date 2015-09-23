@@ -11,7 +11,7 @@ describe('unexpected-stream', function () {
 
     expect.output.preferredWidth = 150;
 
-    describe('to yield output', function () {
+    describe('to yield output satisfying', function () {
         it('should buffer up the output of a readable stream that outputs buffers', function () {
             return expect(fs.createReadStream(fooTxtPath), 'to yield output satisfying', new Buffer('foobarquux\n', 'utf-8'));
         });
@@ -30,6 +30,16 @@ describe('unexpected-stream', function () {
                     "  -foobarquux\n" +
                     "  +blah"
             );
+        });
+
+        it('should be able to assert the output of the same stream multiple times', function () {
+            var readStream = fs.createReadStream(fooTxtPath, {encoding: 'utf-8'});
+            return expect.promise.all([
+                expect(readStream, 'to yield output satisfying', 'to equal', 'foobarquux\n'),
+                expect(readStream, 'to yield output satisfying', 'to equal', 'foobarquux\n')
+            ]).then(function () {
+                return expect(readStream, 'to yield output satisfying', 'to equal', 'foobarquux\n');
+            });
         });
     });
 
