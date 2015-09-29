@@ -14,7 +14,7 @@
     "istanbul": "0.3.13",
     "jshint": "2.6.3",
     "mocha": "2.2.5",
-    "unexpected": "9.13.0",
+    "unexpected": "9.16.0",
     "unexpected-documentation-site-generator": "2.9.2"
   },
   "scripts": {
