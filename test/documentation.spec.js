@@ -66,7 +66,7 @@ describe("documentation tests", function () {
                 "  expected Gunzip\n" +
                 "  to yield output satisfying Buffer([0x79, 0x61, 0x64, 0x64, 0x61, 0x79, 0x61, 0x64, 0x64, 0x61])\n" +
                 "    expected Buffer([0x79, 0x61, 0x64, 0x64, 0x61])\n" +
-                "    to satisfy Buffer([0x79, 0x61, 0x64, 0x64, 0x61, 0x79, 0x61, 0x64, 0x64, 0x61])\n" +
+                "    to equal Buffer([0x79, 0x61, 0x64, 0x64, 0x61, 0x79, 0x61, 0x64, 0x64, 0x61])\n" +
                 "\n" +
                 "    -79 61 64 64 61                                   │yadda│\n" +
                 "    +79 61 64 64 61 79 61 64 64 61                    │yaddayadda│"
@@ -236,7 +236,7 @@ describe("documentation tests", function () {
                 "when piped through [ Gzip, Gunzip ], 'to yield output satisfying', Buffer([0x01, 0x02, 0x03, 0x04, 0x05])\n" +
                 "  expected Gunzip to yield output satisfying Buffer([0x01, 0x02, 0x03, 0x04, 0x05])\n" +
                 "    expected Buffer([0x01, 0x02, 0x03, 0x04])\n" +
-                "    to satisfy Buffer([0x01, 0x02, 0x03, 0x04, 0x05])\n" +
+                "    to equal Buffer([0x01, 0x02, 0x03, 0x04, 0x05])\n" +
                 "\n" +
                 "    -01 02 03 04                                      │....│\n" +
                 "    +01 02 03 04 05                                   │.....│"
@@ -335,7 +335,7 @@ describe("documentation tests", function () {
                 "when piped through Gzip, 'to yield output satisfying', Buffer([0x04, 0x08])\n" +
                 "  expected Gzip to yield output satisfying Buffer([0x04, 0x08])\n" +
                 "    expected Buffer([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0x4C, 0x4A, 0x4E, 0x49, 0x4D /* 10 more */ ])\n" +
-                "    to satisfy Buffer([0x04, 0x08])\n" +
+                "    to equal Buffer([0x04, 0x08])\n" +
                 "\n" +
                 "    -1F 8B 08 00 00 00 00 00 00 03 4B 4C 4A 4E 49 4D  │..........KLJNIM│\n" +
                 "    -03 00 EF 39 8E 4B 06 00 00 00                    │...9.K....│\n" +
