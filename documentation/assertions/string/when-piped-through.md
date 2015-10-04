@@ -31,7 +31,7 @@ return expect(
 
 ```output
 expected 'How about that'
-when piped through [ Gzip, Gunzip ], 'to yield output satisfying', 'when decoded as', 'utf-8', 'not to contain', 'about'
+when piped through [ Gzip, Gunzip ] to yield output satisfying 'when decoded as', 'utf-8', 'not to contain', 'about'
   expected Gunzip
   to yield output satisfying 'when decoded as', 'utf-8', 'not to contain', 'about'
     expected Buffer([0x48, 0x6F, 0x77, 0x20, 0x61, 0x62, 0x6F, 0x75, 0x74, 0x20, 0x74, 0x68, 0x61, 0x74])
