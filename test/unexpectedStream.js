@@ -180,5 +180,15 @@ describe('unexpected-stream', function () {
                 );
             });
         });
+
+        it('should provide the target stream as the fulfillment value', function () {
+            return expect(
+                fs.createReadStream(fooTxtPath),
+                'piped through',
+                zlib.createGzip()
+            ).then(function (targetStream) {
+                expect(targetStream, 'to be a', require('zlib').Gzip);
+            });
+        });
     });
 });

@@ -41,3 +41,13 @@ when piped through [ Gzip, Gunzip ] to yield output satisfying Buffer([0x01, 0x0
     -01 02 03 04                                      │....│
     +01 02 03 04 05                                   │.....│
 ```
+
+If you don't provide an assertion to delegate to, the target stream will be provided
+as the fulfillment value of the promise:
+
+```js
+var zlib = require('zlib');
+return expect('foobar', 'piped through', zlib.Gzip()).then(function (targetStream) {
+    return expect(targetStream, 'to be a', zlib.Gzip);
+});
+```

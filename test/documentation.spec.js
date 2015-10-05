@@ -243,6 +243,11 @@ describe("documentation tests", function () {
             );
         }));
 
+
+        var zlib = require('zlib');
+        return expect('foobar', 'piped through', zlib.Gzip()).then(function (targetStream) {
+            return expect(targetStream, 'to be a', zlib.Gzip);
+        });
         return expect.promise.all(testPromises);
     });
 
