@@ -24,6 +24,7 @@
                 <li class="active"><a href="../../string/when-piped-through">Assertions</a></li>
                 
                 
+                
             </ul>
         </nav>
         <div class="search" style="visibility: hidden">
@@ -95,6 +96,14 @@
 
     <div class="main" tabindex="-1">
         <div class="content">
+            <h1>when piped through</h1>
+            
+                <ul class="declarations">
+                </p>
+                    <li>&lt;Stream|string|Buffer|array&gt; when piped through &lt;array|Stream&gt; &lt;assertion?&gt;</li>
+                
+                </ul>
+            
             <p>Pipe the output of a readable stream through a transform stream or a sequence
 of transform streams, then delegate to another assertion using the last stream
 as the subject.</p>
@@ -122,9 +131,10 @@ as the subject.</p>
   <div><span style="color: #000000">);</span></div>
 </div><div class="output">
   <div><span style="color: red; font-weight: bold">expected</span>&nbsp;<span style="color: #795da3">ReadStream</span></div>
-  <div><span style="color: red; font-weight: bold">when&nbsp;piped&nbsp;through</span>&nbsp;[&nbsp;<span style="color: #795da3">Gzip</span>,&nbsp;<span style="color: #795da3">Gunzip</span>&nbsp;],&nbsp;<span style="color: #df5000">'to&nbsp;yield&nbsp;output&nbsp;satisfying'</span>,&nbsp;<span style="color: #df5000">'when&nbsp;decoded&nbsp;as'</span>,&nbsp;<span style="color: #df5000">'ascii'</span>,&nbsp;<span style="color: #df5000">'not&nbsp;to&nbsp;contain'</span>,&nbsp;<span style="color: #df5000">'IMPLIED&nbsp;WARRANTIES'</span></div>
+  <div><span style="color: red; font-weight: bold">when&nbsp;piped&nbsp;through</span>&nbsp;[&nbsp;<span style="color: #795da3">Gzip</span>,&nbsp;<span style="color: #795da3">Gunzip</span>&nbsp;]&nbsp;<span style="color: red; font-weight: bold">to&nbsp;yield&nbsp;output&nbsp;satisfying</span>&nbsp;<span style="color: red; font-weight: bold">when&nbsp;decoded&nbsp;as</span>&nbsp;<span style="color: #df5000">'ascii'</span>&nbsp;<span style="color: red; font-weight: bold">not&nbsp;to&nbsp;contain</span>&nbsp;<span style="color: #df5000">'IMPLIED&nbsp;WARRANTIES'</span></div>
   <div>&nbsp;&nbsp;<div style="display: inline-block; vertical-align: top">
-  <div><span style="color: red; font-weight: bold">expected</span>&nbsp;<span style="color: #795da3">Gunzip</span>&nbsp;<span style="color: red; font-weight: bold">to&nbsp;yield&nbsp;output&nbsp;satisfying</span>&nbsp;<span style="color: #df5000">'when&nbsp;decoded&nbsp;as'</span>,&nbsp;<span style="color: #df5000">'ascii'</span>,&nbsp;<span style="color: #df5000">'not&nbsp;to&nbsp;contain'</span>,&nbsp;<span style="color: #df5000">'IMPLIED&nbsp;WARRANTIES'</span></div>
+  <div><span style="color: red; font-weight: bold">expected</span>&nbsp;<span style="color: #795da3">Gunzip</span></div>
+  <div><span style="color: red; font-weight: bold">to&nbsp;yield&nbsp;output&nbsp;satisfying</span>&nbsp;<span style="color: #df5000">'when&nbsp;decoded&nbsp;as'</span>,&nbsp;<span style="color: #df5000">'ascii'</span>,&nbsp;<span style="color: #df5000">'not&nbsp;to&nbsp;contain'</span>,&nbsp;<span style="color: #df5000">'IMPLIED&nbsp;WARRANTIES'</span></div>
   <div>&nbsp;&nbsp;<div style="display: inline-block; vertical-align: top">
   <div><span style="color: red; font-weight: bold">expected</span>&nbsp;<span style="color: #000000">Buffer</span><span style="color: #000000">([</span><span style="color: #0086b3">0x43</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x6F</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x70</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x79</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x72</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x69</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x67</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x68</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x74</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x20</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x28</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x63</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x29</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x20</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x32</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x30</span>&nbsp;<span style="color: #969896">/*&nbsp;1478&nbsp;more&nbsp;*/</span>&nbsp;<span style="color: #000000">])</span></div>
   <div><span style="color: red; font-weight: bold">when&nbsp;decoded&nbsp;as</span>&nbsp;<span style="color: #df5000">'ascii'</span>&nbsp;<span style="color: red; font-weight: bold">not&nbsp;to&nbsp;contain</span>&nbsp;<span style="color: #df5000">'IMPLIED&nbsp;WARRANTIES'</span></div>
