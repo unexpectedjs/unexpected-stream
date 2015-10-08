@@ -147,7 +147,7 @@ describe("documentation tests", function () {
         }).caught(function (e) {
             expect(e, "to have message",
                 "expected ReadStream\n" +
-                "when piped through [ Gzip, Gunzip ] to yield output satisfying 'when decoded as', 'ascii', 'not to contain', 'IMPLIED WARRANTIES'\n" +
+                "when piped through [ Gzip, Gunzip ] to yield output satisfying when decoded as 'ascii', 'not to contain', 'IMPLIED WARRANTIES'\n" +
                 "  expected Gunzip\n" +
                 "  to yield output satisfying 'when decoded as', 'ascii', 'not to contain', 'IMPLIED WARRANTIES'\n" +
                 "    expected Buffer([0x43, 0x6F, 0x70, 0x79, 0x72, 0x69, 0x67, 0x68, 0x74, 0x20, 0x28, 0x63, 0x29, 0x20, 0x32, 0x30 /* 1478 more */ ])\n" +
@@ -296,7 +296,7 @@ describe("documentation tests", function () {
         }).caught(function (e) {
             expect(e, "to have message",
                 "expected 'How about that'\n" +
-                "when piped through [ Gzip, Gunzip ] to yield output satisfying 'when decoded as', 'utf-8', 'not to contain', 'about'\n" +
+                "when piped through [ Gzip, Gunzip ] to yield output satisfying when decoded as 'utf-8', 'not to contain', 'about'\n" +
                 "  expected Gunzip\n" +
                 "  to yield output satisfying 'when decoded as', 'utf-8', 'not to contain', 'about'\n" +
                 "    expected Buffer([0x48, 0x6F, 0x77, 0x20, 0x61, 0x62, 0x6F, 0x75, 0x74, 0x20, 0x74, 0x68, 0x61, 0x74])\n" +
