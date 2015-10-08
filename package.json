@@ -34,10 +34,10 @@
     "test",
     "assertion",
     "unexpected",
-    "image",
-    "resemblance",
-    "comparison",
-    "diff"
+    "readable",
+    "stream",
+    "chunks",
+    "node.js"
   ],
   "author": "Andreas Lind <andreas@one.com>",
   "license": "BSD-3-Clause",
