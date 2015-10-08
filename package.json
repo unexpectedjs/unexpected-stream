@@ -15,7 +15,7 @@
     "jshint": "2.6.3",
     "mocha": "2.2.5",
     "unexpected": "10.0.0",
-    "unexpected-documentation-site-generator": "2.9.2"
+    "unexpected-documentation-site-generator": "3.1.0"
   },
   "scripts": {
     "lint": "jshint .",
@@ -24,7 +24,7 @@
     "coverage": "NODE_ENV=development istanbul cover _mocha -- --reporter dot && echo google-chrome coverage/lcov-report/index.html",
     "generate-site": "node ./generate-site.js",
     "update-examples": "node ./generate-site.js --update-examples && npm run generate-site",
-    "deploy-site": "deploy-site"
+    "deploy-site": "deploy-site.sh"
   },
   "repository": {
     "type": "git",
