@@ -24,7 +24,7 @@ describe('unexpected-stream', function () {
             return expect(
                 expect(fs.createReadStream(fooTxtPath, {encoding: 'utf-8'}), 'to yield output satisfying', 'to equal', 'blah\n'),
                 'to be rejected with',
-                    "expected ReadStream to yield output satisfying 'to equal', 'blah\\n'\n" +
+                    "expected ReadStream to yield output satisfying to equal 'blah\\n'\n" +
                     "  expected 'foobarquux\\n' to equal 'blah\\n'\n" +
                     "\n" +
                     "  -foobarquux\n" +
