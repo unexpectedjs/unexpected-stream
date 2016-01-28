@@ -1,6 +1,6 @@
 Asserts that a stream produces output chunks [satisfying](http://unexpected.js.org/assertions/any/to-satisfy/) a spec.
 
-The output will be concatenated to either a single Buffer or string, depending on what the stream outputs.
+The chunks are made available as an array with entries corresponding to the `data` events emitted by the stream.
 
 ```js#async:true
 return expect(
