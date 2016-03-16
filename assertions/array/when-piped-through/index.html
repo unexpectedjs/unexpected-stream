@@ -128,8 +128,16 @@ is chunked in a certain way.</p>
   <div><span style="color: red; font-weight: bold">expected</span>&nbsp;<span style="color: #000000">Buffer</span><span style="color: #000000">([</span><span style="color: #0086b3">0x01</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x02</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x03</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x04</span><span style="color: #000000">])</span></div>
   <div><span style="color: red; font-weight: bold">to&nbsp;equal</span>&nbsp;<span style="color: #000000">Buffer</span><span style="color: #000000">([</span><span style="color: #0086b3">0x01</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x02</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x03</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x04</span><span style="color: #000000">,</span>&nbsp;<span style="color: #0086b3">0x05</span><span style="color: #000000">])</span></div>
   <div>&nbsp;</div>
+  <div><div style="display: inline-block; vertical-align: top">
+  <div><span style="color: red">-</span></div>
+</div><div style="display: inline-block; vertical-align: top">
   <div><span style="color: red">01</span>&nbsp;<span style="color: red">02</span>&nbsp;<span style="color: red">03</span>&nbsp;<span style="color: red">04</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<span style="color: red">....</span>│</div>
+</div></div>
+  <div><div style="display: inline-block; vertical-align: top">
+  <div><span style="color: green">+</span></div>
+</div><div style="display: inline-block; vertical-align: top">
   <div><span style="color: green">01</span>&nbsp;<span style="color: green">02</span>&nbsp;<span style="color: green">03</span>&nbsp;<span style="color: green">04</span>&nbsp;<span style="background-color: green; color: white">05</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;│<span style="color: green">....</span><span style="background-color: green; color: white">.</span>│</div>
+</div></div>
 </div></div>
 </div></div>
 </div><p>If you don&#39;t provide an assertion to delegate to, the target stream will be provided
