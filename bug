@@ -1,7 +1,0 @@
-assertionIndices <Stream|string|Buffer|array> [when] piped through <array|Stream> <assertion?> [ 1, 2, 4 ]
-assertionIndices <Stream> to yield (output|chunks|objects) satisfying <any+> []
-assertionIndices <object|function> to have [own] property <string> <any> []
-assertionIndices <object|function> [not] to have property <string> []
-assertionIndices <any> to [exhaustively] satisfy assertion <assertion> [ 0, 2 ]
-assertionIndices <Buffer> [when] decoded as <string> <assertion?> [ 1 ]
-assertionIndices <string> [not] to contain <string+> []
