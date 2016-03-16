@@ -15,7 +15,7 @@
     "jshint": "2.6.3",
     "mocha": "2.2.5",
     "unexpected": "10.0.1",
-    "unexpected-documentation-site-generator": "3.1.0"
+    "unexpected-documentation-site-generator": "4.0.0"
   },
   "scripts": {
     "lint": "jshint .",
