@@ -1,11 +1,15 @@
 [
   {
-    "label": "to yield output satisfying (Stream)",
-    "url": "/assertions/Stream/to-yield-output-satisfying/"
+    "label": "when piped through (Buffer)",
+    "url": "/assertions/Buffer/when-piped-through/"
   },
   {
     "label": "to yield chunks satisfying (Stream)",
     "url": "/assertions/Stream/to-yield-chunks-satisfying/"
+  },
+  {
+    "label": "to yield output satisfying (Stream)",
+    "url": "/assertions/Stream/to-yield-output-satisfying/"
   },
   {
     "label": "when piped through (Stream)",
@@ -14,10 +18,6 @@
   {
     "label": "when piped through (array)",
     "url": "/assertions/array/when-piped-through/"
-  },
-  {
-    "label": "when piped through (Buffer)",
-    "url": "/assertions/Buffer/when-piped-through/"
   },
   {
     "label": "when piped through (string)",
