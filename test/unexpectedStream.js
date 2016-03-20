@@ -2,6 +2,7 @@
 var unexpected = require('unexpected'),
     pathModule = require('path'),
     streamModule = require('stream'),
+    EventEmitter = require('events').EventEmitter,
     fs = require('fs'),
     zlib = require('zlib');
 
@@ -10,6 +11,14 @@ describe('unexpected-stream', function () {
         fooTxtPath = pathModule.resolve(__dirname, '..', 'testdata', 'foo.txt');
 
     expect.output.preferredWidth = 150;
+
+    it('should identify a stream-like object with a readable property of true', function () {
+        expect(expect.getType('Stream').identify({on: function () {}, readable: true}), 'to be true');
+    });
+
+    it('should identify a stream-like object with a writable property of true', function () {
+        expect(expect.getType('Stream').identify({on: function () {}, writable: true}), 'to be true');
+    });
 
     describe('to yield output satisfying', function () {
         it('should buffer up the output of a readable stream that outputs buffers', function () {
@@ -40,6 +49,17 @@ describe('unexpected-stream', function () {
             ]).then(function () {
                 return expect(readStream, 'to yield output satisfying', 'to equal', 'foobarquux\n');
             });
+        });
+
+        it('should convert to Buffer when a readable stream outputs both Buffer and string chunks', function () {
+            var stream = new EventEmitter();
+            stream.readable = true;
+            setImmediate(function () {
+                stream.emit('data', 'foo');
+                stream.emit('data', new Buffer('bar'));
+                stream.emit('end');
+            });
+            return expect(stream, 'to yield output satisfying', new Buffer('foobar'));
         });
     });
 
