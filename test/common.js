@@ -1,3 +1,5 @@
 /*global unexpected:true*/
 unexpected = require('unexpected').clone()
-    .installPlugin(require('../lib/unexpectedStream'));
+    .use(require('../lib/unexpectedStream'));
+
+unexpected.output.preferredWidth = 80;
