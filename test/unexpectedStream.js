@@ -12,12 +12,29 @@ describe('unexpected-stream', function () {
 
     expect.output.preferredWidth = 150;
 
+    expect.addAssertion('<any> to inspect as <string>', function (expect, subject, value) {
+        expect(expect.inspect(subject).toString(), 'to equal', value);
+    });
+
     it('should identify a stream-like object with a readable property of true', function () {
         expect(expect.getType('Stream').identify({on: function () {}, readable: true}), 'to be true');
     });
 
     it('should identify a stream-like object with a writable property of true', function () {
         expect(expect.getType('Stream').identify({on: function () {}, writable: true}), 'to be true');
+    });
+
+    it('should inspect a stream as the constructor name', function () {
+        var stream = new EventEmitter();
+        stream.readable = true;
+        expect(stream, 'to inspect as', 'EventEmitter');
+    });
+
+    it('should inspect a stream as "Stream" if the constructor is anonymous', function () {
+        var Constructor = function () {};
+        Constructor.prototype.readable = true;
+        Constructor.prototype.on = function () {};
+        expect(new Constructor(), 'to inspect as', 'Stream');
     });
 
     describe('to yield output satisfying', function () {
