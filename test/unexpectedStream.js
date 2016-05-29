@@ -228,4 +228,17 @@ describe('unexpected-stream', function () {
             });
         });
     });
+
+    describe('with a broken stream that throws from the write method', function () {
+        it('should propagate the error', function () {
+            var stream = new EventEmitter();
+            stream.readable = stream.writable = true;
+            stream.write = function () {
+                throw new Error('ugh');
+            };
+            return expect(function () {
+                return expect(['abc'], 'when piped through', stream, 'to yield output satisfying', 'blabla');
+            }, 'to error', 'ugh');
+        });
+    });
 });
