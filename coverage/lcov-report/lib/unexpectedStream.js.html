@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for lib/unexpectedStream.js</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="../prettify.css">
+    <link rel="stylesheet" href="../base.css">
+    <style type='text/css'>
+        div.coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class="header high">
+    <h1>Code coverage report for <span class="entity">lib/unexpectedStream.js</span></h1>
+    <h2>
+        Statements: <span class="metric">100% <small>(47 / 47)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Branches: <span class="metric">100% <small>(25 / 25)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Functions: <span class="metric">100% <small>(16 / 16)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Lines: <span class="metric">100% <small>(46 / 46)</small></span> &nbsp;&nbsp;&nbsp;&nbsp;
+        Ignored: <span class="metric"><span class="ignore-none">none</span></span> &nbsp;&nbsp;&nbsp;&nbsp;
+    </h2>
+    <div class="path"><a href="../index.html">All files</a> &#187; <a href="index.html">lib/</a> &#187; unexpectedStream.js</div>
+</div>
+<div class="body">
+<pre><table class="coverage">
+<tr><td class="line-count">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95</td><td class="line-coverage"><span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">575</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-yes">3</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-yes">11</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">9</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-yes">25</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">14</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-yes">5</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">10</span>
+<span class="cline-any cline-yes">18</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">17</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">16</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">module.exports = {
+    name: 'unexpected-stream',
+    version: require('../package.json').version,
+    installInto: function (expect) {
+        expect.addType({
+            name: 'Stream',
+            base: 'object',
+            inspect: function (obj, depth, output, inspect) {
+                return output.text(obj.constructor.name, 'jsFunctionName');
+            },
+            identify: function (obj) {
+                return obj &amp;&amp; typeof obj.on === 'function' &amp;&amp; (obj._readableState || typeof obj.readable === 'boolean' || typeof obj.writable === 'boolean');
+            }
+        });
+&nbsp;
+        expect.addAssertion('&lt;Stream|string|Buffer|array&gt; [when] piped through &lt;array|Stream&gt; &lt;assertion?&gt;', function (expect, subject, value) {
+            expect.errorMode = 'nested';
+&nbsp;
+            return expect.promise(function (resolve, reject) {
+                var pipeThroughStreams = Array.isArray(value) ? value : [ value ];
+                expect(pipeThroughStreams, 'not to be empty');
+                var subjectType = expect.findTypeOf(subject);
+                var currentStream;
+                if (subjectType.is('Stream')) {
+                    currentStream = subject;
+                    subject.on('error', reject);
+                }
+&nbsp;
+                var returnValue = resolve(expect.shift(pipeThroughStreams[pipeThroughStreams.length - 1]));
+&nbsp;
+                pipeThroughStreams.forEach(function (pipeThroughStream) {
+                    pipeThroughStream.on('error', reject);
+                    currentStream = currentStream ? currentStream.pipe(pipeThroughStream) : pipeThroughStream;
+                });
+&nbsp;
+                if (!subjectType.is('Stream')) {
+                    // string, Buffer, or array
+                    (Array.isArray(subject) ? subject : [ subject ]).forEach(function (chunk) {
+                        pipeThroughStreams[0].write(chunk);
+                    });
+                    pipeThroughStreams[0].end();
+                }
+&nbsp;
+                return returnValue;
+            });
+        });
+&nbsp;
+        expect.addAssertion([
+            '&lt;Stream&gt; to yield (output|chunks|objects) satisfying &lt;any+&gt;',
+            '&lt;Stream&gt; to yield (output|chunks|objects) satisfying &lt;assertion&gt;'
+        ], function (expect, subject, assertionOrSatisfySpec) {
+            expect.errorMode = 'nested';
+&nbsp;
+            var extraArgs = Array.prototype.slice.call(arguments, 2),
+                mustConcat = expect.alternations[0] === 'output';
+&nbsp;
+            return expect.promise(function (resolve, reject) {
+                if (!subject._unexpectedStreamChunksPromise) {
+                    subject._unexpectedStreamChunksPromise = expect.promise(function (resolve, reject) {
+                        expect(subject, 'to have property', 'readable', true);
+                        var chunks = [];
+                        subject.on('data', function (chunk) {
+                            chunks.push(chunk);
+                        }).on('end', function () {
+                            resolve(chunks);
+                        }).on('error', reject);
+                    });
+                }
+                subject._unexpectedStreamChunksPromise.then(function (chunks) {
+                    var result;
+                    if (mustConcat) {
+                        if (chunks.length &gt; 0 &amp;&amp; chunks.every(function (chunk) { return typeof chunk === 'string'; })) {
+                            result = chunks.join('');
+                        } else {
+                            // chunks or objects (object mode)
+                            result = Buffer.concat(chunks.map(function (chunk) {
+                                if (typeof chunk === 'string') {
+                                    return new Buffer(chunk, 'utf-8');
+                                } else {
+                                    return chunk;
+                                }
+                            }));
+                        }
+                    } else {
+                        result = chunks;
+                    }
+                    resolve(result);
+                });
+            }).then(function (result) {
+                return expect.apply(expect, [result, 'to satisfy assertion'].concat(extraArgs));
+            });
+        });
+    }
+};
+&nbsp;</pre></td></tr>
+</table></pre>
+
+</div>
+<div class="footer">
+    <div class="meta">Generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Sun Mar 20 2016 22:41:50 GMT+0100 (CET)</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
