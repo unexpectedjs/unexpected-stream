@@ -30,8 +30,8 @@ describe('unexpected-stream', function () {
         expect(stream, 'to inspect as', 'EventEmitter');
     });
 
-    if (parseInt(process.version.match(/v(\d+)\./)[1], 10) <= 7) {
-        // In node.js 7 it comes out as "Constructor", which is actually better
+    if (parseInt(process.version.match(/v(\d+)\./)[1], 10) < 6) {
+        // In node.js 6+ it comes out as "Constructor", which is actually better
         it('should inspect a stream as "Stream" if the constructor is anonymous', function () {
             var Constructor = function () {};
             Constructor.prototype.readable = true;
