@@ -4,6 +4,14 @@
     "url": "/assertions/Buffer/when-piped-through/"
   },
   {
+    "label": "to error with (Stream)",
+    "url": "/assertions/Stream/to-error-with/"
+  },
+  {
+    "label": "to error (Stream)",
+    "url": "/assertions/Stream/to-error/"
+  },
+  {
     "label": "to yield chunks satisfying (Stream)",
     "url": "/assertions/Stream/to-yield-chunks-satisfying/"
   },
