@@ -30,12 +30,15 @@ describe('unexpected-stream', function () {
         expect(stream, 'to inspect as', 'EventEmitter');
     });
 
-    it('should inspect a stream as "Stream" if the constructor is anonymous', function () {
-        var Constructor = function () {};
-        Constructor.prototype.readable = true;
-        Constructor.prototype.on = function () {};
-        expect(new Constructor(), 'to inspect as', 'Stream');
-    });
+    if (parseInt(process.version.match(/v(\d+)\./)[1], 10) <= 7) {
+        // In node.js 7 it comes out as "Constructor", which is actually better
+        it('should inspect a stream as "Stream" if the constructor is anonymous', function () {
+            var Constructor = function () {};
+            Constructor.prototype.readable = true;
+            Constructor.prototype.on = function () {};
+            expect(new Constructor(), 'to inspect as', 'Stream');
+        });
+    }
 
     describe('to yield output satisfying', function () {
         it('should buffer up the output of a readable stream that outputs buffers', function () {

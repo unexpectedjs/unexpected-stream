@@ -3,7 +3,7 @@ Asserts that a stream emits the 'error' event with a value [satisfying](http://u
 ```js#async:true
 return expect(
   require('fs').createReadStream('nonexistent.md'),
-  'to error with', /no such file or directory/
+  'to error with', /ENOENT/
 );
 ```
 
