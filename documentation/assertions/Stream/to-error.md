@@ -8,7 +8,7 @@ The error instance will be provided as the fulfillment value:
 
 ```js#async:true
 return expect(require('fs').createReadStream('nonexistent.md'), 'to error')
-    .then(err => {
+    .then(function (err) {
         expect(err.message, 'to contain', 'foo');
     });
 ```
