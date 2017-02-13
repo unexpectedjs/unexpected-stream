@@ -273,4 +273,85 @@ describe('unexpected-stream', function () {
             });
         });
     });
+
+    describe('to error assertion', function () {
+        describe('when the stream errors', function () {
+            it('should provide the error as the fulfillment value', function () {
+                var stream = new EventEmitter();
+                var err = new Error('ugh');
+                stream.readable = stream.writable = true;
+                setImmediate(function () {
+                    stream.emit('error', err);
+                });
+                stream.end = function () {};
+                return expect(
+                    expect(stream, 'to error'),
+                    'to be fulfilled with',
+                    err
+                );
+            });
+        });
+
+        describe('when the stream succeeds', function () {
+            it('should fail', function () {
+                var stream = new EventEmitter();
+                stream.readable = stream.writable = true;
+                setImmediate(function () {
+                    stream.emit('data', 'foo');
+                    stream.emit('end');
+                });
+                return expect(function () {
+                    return expect(stream, 'to error');
+                }, 'to error with', 'Stream was supposed to fail, but ended correctly');
+            });
+        });
+    });
+
+    describe('to error with', function () {
+        describe('when the stream errors', function () {
+            it('should succeed', function () {
+                var stream = new EventEmitter();
+                var err = new Error('ugh');
+                stream.readable = stream.writable = true;
+                setImmediate(function () {
+                    stream.emit('error', err);
+                });
+                stream.end = function () {};
+                expect(stream, 'to error with', err);
+            });
+
+            it('should fail with a diff', function () {
+                var stream = new EventEmitter();
+                var err = new Error('ugh');
+                stream.readable = stream.writable = true;
+                setImmediate(function () {
+                    stream.emit('error', err);
+                });
+                stream.end = function () {};
+                return expect(function () {
+                    return expect(stream, 'to error with', 'blabla');
+                }, 'to error with',
+                    "expected EventEmitter to error with 'blabla'\n" +
+                    "  expected Error('ugh') to satisfy 'blabla'\n" +
+                    "\n" +
+                    "  -ugh\n" +
+                    "  +blabla"
+                );
+            });
+        });
+
+        describe('when the stream succeeds', function () {
+            it('should fail', function () {
+                var stream = new EventEmitter();
+                stream.readable = stream.writable = true;
+                setImmediate(function () {
+                    stream.emit('data', 'foo');
+                    stream.emit('end');
+                });
+                return expect(function () {
+                    return expect(stream, 'to error with', 'foo');
+                }, 'to error with', 'Stream was supposed to fail, but ended correctly');
+            });
+        });
+    });
 });
