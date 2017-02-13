@@ -1,7 +1,15 @@
 [
   {
+    "label": "when piped through (array)",
+    "url": "/assertions/array/when-piped-through/"
+  },
+  {
     "label": "when piped through (Buffer)",
     "url": "/assertions/Buffer/when-piped-through/"
+  },
+  {
+    "label": "when piped through (string)",
+    "url": "/assertions/string/when-piped-through/"
   },
   {
     "label": "to error with (Stream)",
@@ -22,13 +30,5 @@
   {
     "label": "when piped through (Stream)",
     "url": "/assertions/Stream/when-piped-through/"
-  },
-  {
-    "label": "when piped through (array)",
-    "url": "/assertions/array/when-piped-through/"
-  },
-  {
-    "label": "when piped through (string)",
-    "url": "/assertions/string/when-piped-through/"
   }
 ]

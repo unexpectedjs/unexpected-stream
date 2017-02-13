@@ -106,61 +106,8 @@
 <div class="code lang-javascript">
   <div><span style="color: #a71d5d">return</span>&nbsp;<span style="color: #000000">expect</span><span style="color: #000000">(</span></div>
   <div>&nbsp;&nbsp;<span style="color: #000000">require</span><span style="color: #000000">(</span><span style="color: #df5000">'fs'</span><span style="color: #000000">).</span><span style="color: #000000">createReadStream</span><span style="color: #000000">(</span><span style="color: #df5000">'nonexistent.md'</span><span style="color: #000000">),</span></div>
-  <div>&nbsp;&nbsp;<span style="color: #df5000">'to&nbsp;error&nbsp;with'</span><span style="color: #000000">,</span>&nbsp;<span style="color: #a71d5d">new</span>&nbsp;Error<span style="color: #000000">(</span><span style="color: #df5000">'foobar'</span><span style="color: #000000">)</span></div>
+  <div>&nbsp;&nbsp;<span style="color: #df5000">'to&nbsp;error&nbsp;with'</span><span style="color: #000000">,</span>&nbsp;<span style="color: #183691">/no&nbsp;such&nbsp;file&nbsp;or&nbsp;directory/</span></div>
   <div><span style="color: #000000">);</span></div>
-</div><div class="output">
-  <div><span style="color: red; font-weight: bold">expected</span>&nbsp;<span style="color: #795da3">ReadStream</span>&nbsp;<span style="color: red; font-weight: bold">to&nbsp;error&nbsp;with</span>&nbsp;Error(<span style="color: #df5000">'foobar'</span>)</div>
-  <div>&nbsp;&nbsp;<div style="display: inline-block; vertical-align: top">
-  <div><span style="color: red; font-weight: bold">expected</span></div>
-  <div>Error({</div>
-  <div>&nbsp;&nbsp;<div style="display: inline-block; vertical-align: top">
-  <div><span style="color: #555">message</span>:&nbsp;<span style="color: #df5000">'ENOENT:&nbsp;no&nbsp;such&nbsp;file&nbsp;or&nbsp;directory,&nbsp;open&nbsp;\'nonexistent.md\''</span>,</div>
-  <div><span style="color: #555">errno</span>:&nbsp;<span style="color: #0086b3">-2</span>,</div>
-  <div><span style="color: #555">code</span>:&nbsp;<span style="color: #df5000">'ENOENT'</span>,</div>
-  <div><span style="color: #555">syscall</span>:&nbsp;<span style="color: #df5000">'open'</span>,</div>
-  <div><span style="color: #555">path</span>:&nbsp;<span style="color: #df5000">'nonexistent.md'</span></div>
-</div></div>
-  <div>})</div>
-  <div><span style="color: red; font-weight: bold">to&nbsp;satisfy</span>&nbsp;Error(<span style="color: #df5000">'foobar'</span>)</div>
-  <div>&nbsp;</div>
-  <div>Error({</div>
-  <div>&nbsp;&nbsp;<div style="display: inline-block; vertical-align: top">
-  <div><span style="color: #555">message</span>:&nbsp;<div style="display: inline-block; vertical-align: top">
-  <div><span style="color: #df5000">'ENOENT:&nbsp;no&nbsp;such&nbsp;file&nbsp;or&nbsp;directory,&nbsp;open&nbsp;\'nonexistent.md\''</span>,</div>
-</div>&nbsp;<div style="display: inline-block; vertical-align: top">
-  <div><span style="color: red; font-weight: bold">//</span></div>
-  <div><span style="color: red; font-weight: bold">//</span></div>
-  <div><span style="color: red; font-weight: bold">//</span></div>
-</div>&nbsp;<div style="display: inline-block; vertical-align: top">
-  <div><span style="color: red; font-weight: bold">should&nbsp;equal</span>&nbsp;<div style="display: inline-block; vertical-align: top">
-  <div><span style="color: #df5000">'foobar'</span></div>
-</div></div>
-  <div><div style="display: inline-block; vertical-align: top">
-  <div><span style="color: red">-</span></div>
-</div><div style="display: inline-block; vertical-align: top">
-  <div><span style="background-color: red; color: white">ENOENT:&nbsp;no&nbsp;such&nbsp;file&nbsp;or&nbsp;directory,&nbsp;open&nbsp;'nonexistent.md'</span></div>
-</div></div>
-  <div><div style="display: inline-block; vertical-align: top">
-  <div><span style="color: green">+</span></div>
-</div><div style="display: inline-block; vertical-align: top">
-  <div><span style="background-color: green; color: white">foobar</span></div>
-</div></div>
-</div></div>
-</div></div>
-  <div>&nbsp;&nbsp;<div style="display: inline-block; vertical-align: top">
-  <div><span style="color: #555">errno</span>:&nbsp;<span style="color: #0086b3">-2</span>,</div>
-</div></div>
-  <div>&nbsp;&nbsp;<div style="display: inline-block; vertical-align: top">
-  <div><span style="color: #555">code</span>:&nbsp;<span style="color: #df5000">'ENOENT'</span>,</div>
-</div></div>
-  <div>&nbsp;&nbsp;<div style="display: inline-block; vertical-align: top">
-  <div><span style="color: #555">syscall</span>:&nbsp;<span style="color: #df5000">'open'</span>,</div>
-</div></div>
-  <div>&nbsp;&nbsp;<div style="display: inline-block; vertical-align: top">
-  <div><span style="color: #555">path</span>:&nbsp;<span style="color: #df5000">'nonexistent.md'</span></div>
-</div></div>
-  <div>})</div>
-</div></div>
 </div><p>If the stream does not fail, the assertion will fail:</p>
 <div class="code lang-javascript">
   <div><span style="color: #a71d5d">return</span>&nbsp;<span style="color: #000000">expect</span><span style="color: #000000">(</span></div>
