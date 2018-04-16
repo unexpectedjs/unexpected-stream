@@ -239,6 +239,7 @@ describe('unexpected-stream', function () {
             stream.write = function () {
                 throw new Error('ugh');
             };
+            stream.end = function () {};
             return expect(function () {
                 return expect(['abc'], 'when piped through', stream, 'to yield output satisfying', 'blabla');
             }, 'to error', 'ugh');
