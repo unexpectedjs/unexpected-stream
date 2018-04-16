@@ -4,7 +4,7 @@
   "description": "node.js streams plugin for the Unexpected assertion library",
   "main": "lib/unexpectedStream.js",
   "dependencies": {
-    "minimist": "1.1.2"
+    "minimist": "^1.1.2"
   },
   "peerDependencies": {
     "unexpected": "10"
