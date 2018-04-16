@@ -232,52 +232,6 @@ describe('unexpected-stream', function () {
         });
     });
 
-    describe('with a broken stream that throws from the write method', function () {
-        it('should propagate the error', function () {
-            var stream = new EventEmitter();
-            stream.readable = stream.writable = true;
-            stream.write = function () {
-                throw new Error('ugh');
-            };
-            stream.end = function () {};
-            return expect(function () {
-                return expect(['abc'], 'when piped through', stream, 'to yield output satisfying', 'blabla');
-            }, 'to error', 'ugh');
-        });
-    });
-
-    describe('with a broken stream that errors', function () {
-        describe('synchronously', function () {
-            it('should propagate the error', function () {
-                var stream = new EventEmitter();
-                stream.readable = stream.writable = true;
-                stream.write = function () {
-                    stream.emit('error', new Error('ugh'));
-                };
-                stream.end = function () {};
-                return expect(function () {
-                    return expect(['abc'], 'when piped through', stream, 'to yield output satisfying', 'blabla');
-                }, 'to error', 'ugh');
-            });
-        });
-
-        describe('asynchronously', function () {
-            it('should propagate the error', function () {
-                var stream = new EventEmitter();
-                stream.readable = stream.writable = true;
-                stream.write = function () {
-                    setImmediate(function () {
-                        stream.emit('error', new Error('ugh'));
-                    });
-                };
-                stream.end = function () {};
-                return expect(function () {
-                    return expect(['abc'], 'when piped through', stream, 'to yield output satisfying', 'blabla');
-                }, 'to error', 'ugh');
-            });
-        });
-    });
-
     describe('to error assertion', function () {
         describe('when the stream errors', function () {
             it('should provide the error as the fulfillment value', function () {
