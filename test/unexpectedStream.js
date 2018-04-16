@@ -53,11 +53,11 @@ describe('unexpected-stream', function () {
             return expect(
                 expect(fs.createReadStream(fooTxtPath, {encoding: 'utf-8'}), 'to yield output satisfying', 'to equal', 'blah\n'),
                 'to be rejected with',
-                    "expected ReadStream to yield output satisfying to equal 'blah\\n'\n" +
+                "expected ReadStream to yield output satisfying to equal 'blah\\n'\n" +
                     "  expected 'foobarquux\\n' to equal 'blah\\n'\n" +
-                    "\n" +
-                    "  -foobarquux\n" +
-                    "  +blah"
+                    '\n' +
+                    '  -foobarquux\n' +
+                    '  +blah'
             );
         });
 
@@ -149,16 +149,16 @@ describe('unexpected-stream', function () {
 
                     ),
                     'to be rejected with',
-                        "expected Buffer([0x66, 0x6F, 0x6F, 0x62, 0x61, 0x72, 0x71, 0x75, 0x78])\n" +
-                        "when piped through Gzip to yield output satisfying Buffer([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C /* 15 more */ ])\n" +
-                        "  expected Gzip\n" +
-                        "  to yield output satisfying Buffer([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C /* 15 more */ ])\n" +
-                        "    expected Buffer([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C /* 13 more */ ])\n" +
-                        "    to equal Buffer([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C /* 15 more */ ])\n" +
-                        "\n" +
-                        "     1F 8B 08 00 00 00 00 00 00 03 4B CB CF 4F 4A 2C  │..........K..OJ,│\n" +
-                        "    -2A 2C AD 00 00 FA 8C B8 C4 09 00 00 00           │*,...........│\n" +
-                        "    +2A 2C 2D AD E0 02 00 C8 99 6F 44 0B 00 00 00     │*,-......oD....│"
+                    'expected Buffer([0x66, 0x6F, 0x6F, 0x62, 0x61, 0x72, 0x71, 0x75, 0x78])\n' +
+                        'when piped through Gzip to yield output satisfying Buffer([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C /* 15 more */ ])\n' +
+                        '  expected Gzip\n' +
+                        '  to yield output satisfying Buffer([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C /* 15 more */ ])\n' +
+                        '    expected Buffer([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C /* 13 more */ ])\n' +
+                        '    to equal Buffer([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C /* 15 more */ ])\n' +
+                        '\n' +
+                        '     1F 8B 08 00 00 00 00 00 00 03 4B CB CF 4F 4A 2C  │..........K..OJ,│\n' +
+                        '    -2A 2C AD 00 00 FA 8C B8 C4 09 00 00 00           │*,...........│\n' +
+                        '    +2A 2C 2D AD E0 02 00 C8 99 6F 44 0B 00 00 00     │*,-......oD....│'
                 );
             });
         });
@@ -197,14 +197,14 @@ describe('unexpected-stream', function () {
 
                     ),
                     'to be rejected with',
-                        "expected [ 'f', 'oo' ] when piped through Gzip to yield output satisfying Buffer([0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C])\n" +
-                        "  expected Gzip to yield output satisfying Buffer([0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C])\n" +
-                        "    expected Buffer([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0xCB, 0xCF, 0x07, 0x00, 0x21 /* 7 more */ ])\n" +
-                        "    to equal Buffer([0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C])\n" +
-                        "\n" +
-                        "    -1F 8B 08 00 00 00 00 00 00 03 4B CB CF 07 00 21  │..........K....!│\n" +
-                        "    -65 73 8C 03 00 00 00                             │es.....│\n" +
-                        "    +03 4B CB CF 4F 4A 2C                             │.K..OJ,│"
+                    "expected [ 'f', 'oo' ] when piped through Gzip to yield output satisfying Buffer([0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C])\n" +
+                        '  expected Gzip to yield output satisfying Buffer([0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C])\n' +
+                        '    expected Buffer([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0xCB, 0xCF, 0x07, 0x00, 0x21 /* 7 more */ ])\n' +
+                        '    to equal Buffer([0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C])\n' +
+                        '\n' +
+                        '    -1F 8B 08 00 00 00 00 00 00 03 4B CB CF 07 00 21  │..........K....!│\n' +
+                        '    -65 73 8C 03 00 00 00                             │es.....│\n' +
+                        '    +03 4B CB CF 4F 4A 2C                             │.K..OJ,│'
                 );
             });
         });
@@ -334,11 +334,11 @@ describe('unexpected-stream', function () {
                 return expect(function () {
                     return expect(stream, 'to error with', 'blabla');
                 }, 'to error with',
-                    "expected EventEmitter to error with 'blabla'\n" +
+                "expected EventEmitter to error with 'blabla'\n" +
                     "  expected Error('ugh') to satisfy 'blabla'\n" +
-                    "\n" +
-                    "  -ugh\n" +
-                    "  +blabla"
+                    '\n' +
+                    '  -ugh\n' +
+                    '  +blabla'
                 );
             });
         });
