@@ -1,4 +1,3 @@
+testdata
 node_modules
 coverage
-site-build
-test/documentation.spec.js
