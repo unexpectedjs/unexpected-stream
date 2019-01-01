@@ -21,7 +21,7 @@
   "scripts": {
     "lint": "eslint .",
     "test": "mocha ./documentation/**/*.md ./test/**/*.js",
-    "travis": "npm test && npm run coverage && npm run lint && <coverage/lcov.info coveralls",
+    "ci": "npm test && npm run coverage && npm run lint && <coverage/lcov.info coveralls",
     "coverage": "NODE_ENV=development istanbul cover _mocha -- --reporter dot && echo google-chrome coverage/lcov-report/index.html",
     "generate-site": "generate-site --require ./bootstrap-unexpected-markdown.js",
     "update-examples": "generate-site --require ./bootstrap-unexpected-markdown.js --update-examples",
