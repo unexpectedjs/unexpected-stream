@@ -5,11 +5,11 @@ It's intended to be used with the [to yield output satisfying](to-yield-output-s
 
 ```js#async:true
 return expect(
-  new Buffer([0x00, 0x01]),
+  Buffer.from([0x00, 0x01]),
   'when piped through',
   require('zlib').Gzip(),
   'to yield output satisfying',
-  new Buffer([
+  Buffer.from([
     0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x63, 0x60, 0x04, 0x00, 0x69, 0x22,
     0xDE, 0x36, 0x02, 0x00, 0x00, 0x00
   ])
@@ -20,14 +20,14 @@ Example with multiple transform streams:
 
 ```js#async:true
 return expect(
-  new Buffer('yadda'),
+  Buffer.from('yadda'),
   'when piped through',
   [
       require('zlib').Gzip(),
       require('zlib').Gunzip()
   ],
   'to yield output satisfying',
-  new Buffer('yaddayadda')
+  Buffer.from('yaddayadda')
 );
 ```
 

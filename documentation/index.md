@@ -22,7 +22,7 @@ return expect(
   'when piped through',
   require('zlib').Gzip(),
   'to yield output satisfying',
-  Buffer([0x04, 0x08])
+  Buffer.from([0x04, 0x08])
 );
 ```
 

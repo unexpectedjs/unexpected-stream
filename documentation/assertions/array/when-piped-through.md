@@ -20,14 +20,14 @@ Example with multiple transform streams:
 
 ```js#async:true
 return expect(
-  [new Buffer([0x01, 0x02]), new Buffer([0x03, 0x04])],
+  [Buffer.from([0x01, 0x02]), Buffer.from([0x03, 0x04])],
   'when piped through',
   [
       require('zlib').Gzip(),
       require('zlib').Gunzip()
   ],
   'to yield output satisfying',
-  new Buffer([0x01, 0x02, 0x03, 0x04, 0x05])
+  Buffer.from([0x01, 0x02, 0x03, 0x04, 0x05])
 );
 ```
 
