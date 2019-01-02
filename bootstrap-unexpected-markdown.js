@@ -1,5 +1,5 @@
 /*global unexpected:true*/
-unexpected = require('unexpected');
+unexpected = require('unexpected')
+  .clone()
+  .use(require('./lib/unexpectedStream'));
 unexpected.output.preferredWidth = 80;
-unexpected = unexpected.clone();
-unexpected.use(require('./lib/unexpectedStream'));
