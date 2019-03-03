@@ -4,7 +4,7 @@
   "description": "node.js streams plugin for the Unexpected assertion library",
   "main": "lib/unexpectedStream.js",
   "peerDependencies": {
-    "unexpected": "10"
+    "unexpected": "10 || ^11.0.0"
   },
   "devDependencies": {
     "coveralls": "^3.0.0",
@@ -14,7 +14,7 @@
     "mocha": "^6.0.0",
     "nyc": "^13.1.0",
     "prettier": "^1.15.3",
-    "unexpected": "^11.0.0-3",
+    "unexpected": "^11.0.0",
     "unexpected-documentation-site-generator": "^6.0.0",
     "unexpected-markdown": "^3.0.0"
   },
