@@ -1,4 +1,4 @@
-/*global describe, it, setImmediate, __dirname*/
+/* global describe, it, setImmediate, __dirname */
 const unexpected = require('unexpected');
 
 const pathModule = require('path');
@@ -140,7 +140,7 @@ describe('unexpected-stream', () => {
       stream._read = () => {
         let chunk = null;
         if (n < 4) {
-          chunk = 'chunk' + n;
+          chunk = `chunk${  n}`;
           n += 1;
         }
         setImmediate(() => {

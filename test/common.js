@@ -1,4 +1,4 @@
-/*global unexpected:true*/
+/* global unexpected:true */
 unexpected = require('unexpected')
   .clone()
   .use(require('../lib/unexpectedStream'));
