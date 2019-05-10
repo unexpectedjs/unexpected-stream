@@ -10,7 +10,8 @@ return expect(
   'when piped through',
   require('zlib').Gzip(),
   'to yield output satisfying',
-  'to have length', 792
+  'to have length',
+  792
 );
 ```
 
@@ -20,13 +21,12 @@ Example with multiple transform streams:
 return expect(
   require('fs').createReadStream('LICENSE'),
   'when piped through',
-  [
-      require('zlib').Gzip(),
-      require('zlib').Gunzip()
-  ],
+  [require('zlib').Gzip(), require('zlib').Gunzip()],
   'to yield output satisfying',
-  'when decoded as', 'ascii',
-  'not to contain', 'IMPLIED WARRANTIES'
+  'when decoded as',
+  'ascii',
+  'not to contain',
+  'IMPLIED WARRANTIES'
 );
 ```
 
@@ -35,7 +35,7 @@ expected ReadStream
 when piped through [ Gzip, Gunzip ] to yield output satisfying when decoded as 'ascii' not to contain 'IMPLIED WARRANTIES'
   expected Gunzip
   to yield output satisfying when decoded as 'ascii' not to contain 'IMPLIED WARRANTIES'
-    expected Buffer([0x43, 0x6F, 0x70, 0x79, 0x72, 0x69, 0x67, 0x68, 0x74, 0x20, 0x28, 0x63, 0x29, 0x20, 0x32, 0x30 /* 1478 more */ ])
+    expected Buffer.from([0x43, 0x6F, 0x70, 0x79, 0x72, 0x69, 0x67, 0x68, 0x74, 0x20, 0x28, 0x63, 0x29, 0x20, 0x32, 0x30 /* 1478 more */ ])
     when decoded as 'ascii' not to contain 'IMPLIED WARRANTIES'
 
     Copyright (c) 2015, Andreas Lind

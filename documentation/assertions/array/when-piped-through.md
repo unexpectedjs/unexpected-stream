@@ -12,7 +12,8 @@ return expect(
   'when piped through',
   require('zlib').Gzip(),
   'to yield output satisfying',
-  'to have length', 26
+  'to have length',
+  26
 );
 ```
 
@@ -22,21 +23,19 @@ Example with multiple transform streams:
 return expect(
   [Buffer.from([0x01, 0x02]), Buffer.from([0x03, 0x04])],
   'when piped through',
-  [
-      require('zlib').Gzip(),
-      require('zlib').Gunzip()
-  ],
+  [require('zlib').Gzip(), require('zlib').Gunzip()],
   'to yield output satisfying',
   Buffer.from([0x01, 0x02, 0x03, 0x04, 0x05])
 );
 ```
 
 ```output
-expected [ Buffer([0x01, 0x02]), Buffer([0x03, 0x04]) ]
-when piped through [ Gzip, Gunzip ] to yield output satisfying Buffer([0x01, 0x02, 0x03, 0x04, 0x05])
-  expected Gunzip to yield output satisfying Buffer([0x01, 0x02, 0x03, 0x04, 0x05])
-    expected Buffer([0x01, 0x02, 0x03, 0x04])
-    to equal Buffer([0x01, 0x02, 0x03, 0x04, 0x05])
+expected [ Buffer.from([0x01, 0x02]), Buffer.from([0x03, 0x04]) ]
+when piped through [ Gzip, Gunzip ] to yield output satisfying Buffer.from([0x01, 0x02, 0x03, 0x04, 0x05])
+  expected Gunzip
+  to yield output satisfying Buffer.from([0x01, 0x02, 0x03, 0x04, 0x05])
+    expected Buffer.from([0x01, 0x02, 0x03, 0x04])
+    to equal Buffer.from([0x01, 0x02, 0x03, 0x04, 0x05])
 
     -01 02 03 04                                      │....│
     +01 02 03 04 05                                   │.....│
@@ -47,7 +46,9 @@ as the fulfillment value of the promise:
 
 ```js
 var zlib = require('zlib');
-return expect('foobar', 'piped through', zlib.Gzip()).then(function (targetStream) {
-    return expect(targetStream, 'to be a', zlib.Gzip);
+return expect('foobar', 'piped through', zlib.Gzip()).then(function(
+  targetStream
+) {
+  return expect(targetStream, 'to be a', zlib.Gzip);
 });
 ```

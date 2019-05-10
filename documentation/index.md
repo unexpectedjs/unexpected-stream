@@ -28,10 +28,10 @@ return expect(
 
 ```output
 expected [ 'abc', 'def' ]
-when piped through Gzip to yield output satisfying Buffer([0x04, 0x08])
-  expected Gzip to yield output satisfying Buffer([0x04, 0x08])
-    expected Buffer([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0x4C, 0x4A, 0x4E, 0x49, 0x4D /* 10 more */ ])
-    to equal Buffer([0x04, 0x08])
+when piped through Gzip to yield output satisfying Buffer.from([0x04, 0x08])
+  expected Gzip to yield output satisfying Buffer.from([0x04, 0x08])
+    expected Buffer.from([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0x4C, 0x4A, 0x4E, 0x49, 0x4D /* 10 more */ ])
+    to equal Buffer.from([0x04, 0x08])
 
     -1F 8B 08 00 00 00 00 00 00 03 4B 4C 4A 4E 49 4D  │..........KLJNIM│
     -03 00 EF 39 8E 4B 06 00 00 00                    │...9.K....│
@@ -46,8 +46,7 @@ return expect(
 );
 ```
 
-License
--------
+## License
 
 Unexpected-stream is licensed under a standard 3-clause BSD license -- see
 the `LICENSE` file for details.
