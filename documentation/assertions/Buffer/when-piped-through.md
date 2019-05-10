@@ -5,10 +5,6 @@ It's intended to be used with the [to yield output satisfying](to-yield-output-s
 
 ```js#async:true
 return expect(
-  Buffer.from([0x00, 0x01]),
-  'when piped through',
-  require('zlib').Gzip(),
-  'to yield output satisfying',
   Buffer.from([
     0x1f,
     0x8b,
@@ -32,7 +28,11 @@ return expect(
     0x00,
     0x00,
     0x00
-  ])
+  ]),
+  'when piped through',
+  require('zlib').Gunzip(),
+  'to yield output satisfying',
+  Buffer.from([0x00, 0x01])
 );
 ```
 

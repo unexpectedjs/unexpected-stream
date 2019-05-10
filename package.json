@@ -7,6 +7,7 @@
     "unexpected": "10 || ^11.0.0"
   },
   "devDependencies": {
+    "base64-stream": "^1.0.0",
     "coveralls": "^3.0.0",
     "eslint": "^5.0.0",
     "eslint-config-prettier": "^4.1.0",

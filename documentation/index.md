@@ -17,25 +17,26 @@ Node.js stream plugin for the [Unexpected](https://unexpected.js.org/) assertion
 [![Dependency Status](https://david-dm.org/unexpectedjs/unexpected-stream.svg)](https://david-dm.org/unexpectedjs/unexpected-stream)
 
 ```js#async:true
+var base64Stream = require('base64-stream');
+
 return expect(
-  ['abc', 'def'],
+  ['Zm9vYm', 'FyCg=='],
   'when piped through',
-  require('zlib').Gzip(),
+  new base64Stream.Base64Decode(),
   'to yield output satisfying',
-  Buffer.from([0x04, 0x08])
+  Buffer.from([0x66, 0x6f, 0x6f])
 );
 ```
 
 ```output
-expected [ 'abc', 'def' ]
-when piped through Gzip to yield output satisfying Buffer.from([0x04, 0x08])
-  expected Gzip to yield output satisfying Buffer.from([0x04, 0x08])
-    expected Buffer.from([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0x4C, 0x4A, 0x4E, 0x49, 0x4D /* 10 more */ ])
-    to equal Buffer.from([0x04, 0x08])
+expected [ 'Zm9vYm', 'FyCg==' ]
+when piped through Base64Decode to yield output satisfying Buffer.from([0x66, 0x6F, 0x6F])
+  expected Base64Decode to yield output satisfying Buffer.from([0x66, 0x6F, 0x6F])
+    expected Buffer.from([0x66, 0x6F, 0x6F, 0x62, 0x61, 0x72, 0x0A])
+    to equal Buffer.from([0x66, 0x6F, 0x6F])
 
-    -1F 8B 08 00 00 00 00 00 00 03 4B 4C 4A 4E 49 4D  │..........KLJNIM│
-    -03 00 EF 39 8E 4B 06 00 00 00                    │...9.K....│
-    +04 08                                            │..│
+    -66 6F 6F 62 61 72 0A                             │foobar.│
+    +66 6F 6F                                         │foo│
 ```
 
 ```js#async:true

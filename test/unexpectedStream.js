@@ -1,15 +1,11 @@
 /* global describe, it, setImmediate, __dirname */
 const unexpected = require('unexpected');
-
 const pathModule = require('path');
-
 const streamModule = require('stream');
-
 const EventEmitter = require('events').EventEmitter;
-
 const fs = require('fs');
-
 const zlib = require('zlib');
+const { Base64Encode } = require('base64-stream');
 
 describe('unexpected-stream', () => {
   const expect = unexpected
@@ -161,41 +157,9 @@ describe('unexpected-stream', () => {
       expect(
         fs.createReadStream(fooTxtPath),
         'when piped through',
-        zlib.createGzip(),
-        'to yield output satisfying',
-        Buffer.from([
-          0x1f,
-          0x8b,
-          0x08,
-          0x00,
-          0x00,
-          0x00,
-          0x00,
-          0x00,
-          0x00,
-          0x03,
-          0x4b,
-          0xcb,
-          0xcf,
-          0x4f,
-          0x4a,
-          0x2c,
-          0x2a,
-          0x2c,
-          0x2d,
-          0xad,
-          0xe0,
-          0x02,
-          0x00,
-          0xc8,
-          0x99,
-          0x6f,
-          0x44,
-          0x0b,
-          0x00,
-          0x00,
-          0x00
-        ])
+        new Base64Encode(),
+        'to yield output satisfying to equal',
+        'Zm9vYmFycXV1eAo='
       ));
 
     it('should pipe the data through multiple proxy streams', () =>
@@ -210,10 +174,6 @@ describe('unexpected-stream', () => {
     describe('with a Buffer instance', () => {
       it('should succeed', () =>
         expect(
-          Buffer.from('foobarquux\n', 'utf-8'),
-          'when piped through',
-          zlib.createGzip(),
-          'to yield output satisfying',
           Buffer.from([
             0x1f,
             0x8b,
@@ -246,16 +206,16 @@ describe('unexpected-stream', () => {
             0x00,
             0x00,
             0x00
-          ])
+          ]),
+          'when piped through',
+          zlib.createGunzip(),
+          'to yield output satisfying',
+          Buffer.from('foobarquux\n', 'utf-8')
         ));
 
       it('fails with a diff', () =>
         expect(
           expect(
-            Buffer.from('foobarqux', 'utf-8'),
-            'when piped through',
-            zlib.createGzip(),
-            'to yield output satisfying',
             Buffer.from([
               0x1f,
               0x8b,
@@ -288,19 +248,21 @@ describe('unexpected-stream', () => {
               0x00,
               0x00,
               0x00
-            ])
+            ]),
+            'when piped through',
+            zlib.createGunzip(),
+            'to yield output satisfying',
+            Buffer.from('foobarqux', 'utf-8')
           ),
           'to be rejected with',
-          'expected Buffer.from([0x66, 0x6F, 0x6F, 0x62, 0x61, 0x72, 0x71, 0x75, 0x78])\n' +
-            'when piped through Gzip to yield output satisfying Buffer.from([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C /* 15 more */ ])\n' +
-            '  expected Gzip\n' +
-            '  to yield output satisfying Buffer.from([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C /* 15 more */ ])\n' +
-            '    expected Buffer.from([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C /* 13 more */ ])\n' +
-            '    to equal Buffer.from([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C /* 15 more */ ])\n' +
+          'expected Buffer.from([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C /* 15 more */ ])\n' +
+            'when piped through Gunzip to yield output satisfying Buffer.from([0x66, 0x6F, 0x6F, 0x62, 0x61, 0x72, 0x71, 0x75, 0x78])\n' +
+            '  expected Gunzip to yield output satisfying Buffer.from([0x66, 0x6F, 0x6F, 0x62, 0x61, 0x72, 0x71, 0x75, 0x78])\n' +
+            '    expected Buffer.from([0x66, 0x6F, 0x6F, 0x62, 0x61, 0x72, 0x71, 0x75, 0x75, 0x78, 0x0A])\n' +
+            '    to equal Buffer.from([0x66, 0x6F, 0x6F, 0x62, 0x61, 0x72, 0x71, 0x75, 0x78])\n' +
             '\n' +
-            '     1F 8B 08 00 00 00 00 00 00 03 4B CB CF 4F 4A 2C  │..........K..OJ,│\n' +
-            '    -2A 2C AD 00 00 FA 8C B8 C4 09 00 00 00           │*,...........│\n' +
-            '    +2A 2C 2D AD E0 02 00 C8 99 6F 44 0B 00 00 00     │*,-......oD....│'
+            '    -66 6F 6F 62 61 72 71 75 75 78 0A                 │foobarquux.│\n' +
+            '    +66 6F 6F 62 61 72 71 75 78                       │foobarqux│'
         ));
     });
 
@@ -309,41 +271,9 @@ describe('unexpected-stream', () => {
         expect(
           'foobarquux\n',
           'when piped through',
-          zlib.createGzip(),
-          'to yield output satisfying',
-          Buffer.from([
-            0x1f,
-            0x8b,
-            0x08,
-            0x00,
-            0x00,
-            0x00,
-            0x00,
-            0x00,
-            0x00,
-            0x03,
-            0x4b,
-            0xcb,
-            0xcf,
-            0x4f,
-            0x4a,
-            0x2c,
-            0x2a,
-            0x2c,
-            0x2d,
-            0xad,
-            0xe0,
-            0x02,
-            0x00,
-            0xc8,
-            0x99,
-            0x6f,
-            0x44,
-            0x0b,
-            0x00,
-            0x00,
-            0x00
-          ])
+          new Base64Encode(),
+          'to yield output satisfying to equal',
+          'Zm9vYmFycXV1eAo='
         ));
     });
 
@@ -352,41 +282,9 @@ describe('unexpected-stream', () => {
         expect(
           ['foo', 'bar', 'quux\n'],
           'when piped through',
-          zlib.createGzip(),
-          'to yield output satisfying',
-          Buffer.from([
-            0x1f,
-            0x8b,
-            0x08,
-            0x00,
-            0x00,
-            0x00,
-            0x00,
-            0x00,
-            0x00,
-            0x03,
-            0x4b,
-            0xcb,
-            0xcf,
-            0x4f,
-            0x4a,
-            0x2c,
-            0x2a,
-            0x2c,
-            0x2d,
-            0xad,
-            0xe0,
-            0x02,
-            0x00,
-            0xc8,
-            0x99,
-            0x6f,
-            0x44,
-            0x0b,
-            0x00,
-            0x00,
-            0x00
-          ])
+          new Base64Encode(),
+          'to yield output satisfying to equal',
+          'Zm9vYmFycXV1eAo='
         ));
 
       it('fails with a diff', () =>
@@ -394,19 +292,17 @@ describe('unexpected-stream', () => {
           expect(
             ['f', 'oo'],
             'when piped through',
-            zlib.createGzip(),
-            'to yield output satisfying',
-            Buffer.from([0x03, 0x4b, 0xcb, 0xcf, 0x4f, 0x4a, 0x2c])
+            new Base64Encode(),
+            'to yield output satisfying to equal',
+            'blah'
           ),
           'to be rejected with',
-          "expected [ 'f', 'oo' ] when piped through Gzip to yield output satisfying Buffer.from([0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C])\n" +
-            '  expected Gzip to yield output satisfying Buffer.from([0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C])\n' +
-            '    expected Buffer.from([0x1F, 0x8B, 0x08, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x03, 0x4B, 0xCB, 0xCF, 0x07, 0x00, 0x21 /* 7 more */ ])\n' +
-            '    to equal Buffer.from([0x03, 0x4B, 0xCB, 0xCF, 0x4F, 0x4A, 0x2C])\n' +
+          "expected [ 'f', 'oo' ] when piped through Base64Encode to yield output satisfying to equal 'blah'\n" +
+            "  expected Base64Encode to yield output satisfying to equal 'blah'\n" +
+            "    expected 'Zm9v' to equal 'blah'\n" +
             '\n' +
-            '    -1F 8B 08 00 00 00 00 00 00 03 4B CB CF 07 00 21  │..........K....!│\n' +
-            '    -65 73 8C 03 00 00 00                             │es.....│\n' +
-            '    +03 4B CB CF 4F 4A 2C                             │.K..OJ,│'
+            '    -Zm9v\n' +
+            '    +blah'
         ));
     });
 
@@ -419,41 +315,9 @@ describe('unexpected-stream', () => {
             Buffer.from('quux\n', 'utf-8')
           ],
           'when piped through',
-          zlib.createGzip(),
-          'to yield output satisfying',
-          Buffer.from([
-            0x1f,
-            0x8b,
-            0x08,
-            0x00,
-            0x00,
-            0x00,
-            0x00,
-            0x00,
-            0x00,
-            0x03,
-            0x4b,
-            0xcb,
-            0xcf,
-            0x4f,
-            0x4a,
-            0x2c,
-            0x2a,
-            0x2c,
-            0x2d,
-            0xad,
-            0xe0,
-            0x02,
-            0x00,
-            0xc8,
-            0x99,
-            0x6f,
-            0x44,
-            0x0b,
-            0x00,
-            0x00,
-            0x00
-          ])
+          new Base64Encode(),
+          'to yield output satisfying to equal',
+          'Zm9vYmFycXV1eAo='
         ));
     });
 
