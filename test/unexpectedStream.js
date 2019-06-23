@@ -1,4 +1,3 @@
-/* global describe, it, setImmediate, __dirname */
 const unexpected = require('unexpected');
 const pathModule = require('path');
 const streamModule = require('stream');
