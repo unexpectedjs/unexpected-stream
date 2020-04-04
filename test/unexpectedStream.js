@@ -99,7 +99,7 @@ describe('unexpected-stream', () => {
             'to yield output satisfying',
             'to equal',
             'foobarquux\n'
-          )
+          ),
         ])
         .then(() =>
           expect(
@@ -146,7 +146,7 @@ describe('unexpected-stream', () => {
         Buffer.from('chunk0', 'utf-8'),
         Buffer.from('chunk1', 'utf-8'),
         Buffer.from('chunk2', 'utf-8'),
-        Buffer.from('chunk3', 'utf-8')
+        Buffer.from('chunk3', 'utf-8'),
       ]);
     });
   });
@@ -204,7 +204,7 @@ describe('unexpected-stream', () => {
             0x0b,
             0x00,
             0x00,
-            0x00
+            0x00,
           ]),
           'when piped through',
           zlib.createGunzip(),
@@ -246,7 +246,7 @@ describe('unexpected-stream', () => {
               0x0b,
               0x00,
               0x00,
-              0x00
+              0x00,
             ]),
             'when piped through',
             zlib.createGunzip(),
@@ -311,7 +311,7 @@ describe('unexpected-stream', () => {
           [
             Buffer.from('foo', 'utf-8'),
             Buffer.from('bar', 'utf-8'),
-            Buffer.from('quux\n', 'utf-8')
+            Buffer.from('quux\n', 'utf-8'),
           ],
           'when piped through',
           new Base64Encode(),
@@ -325,7 +325,7 @@ describe('unexpected-stream', () => {
         fs.createReadStream(fooTxtPath),
         'piped through',
         zlib.createGzip()
-      ).then(targetStream => {
+      ).then((targetStream) => {
         expect(targetStream, 'to be a', require('zlib').Gzip);
       }));
   });

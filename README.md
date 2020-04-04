@@ -1,5 +1,4 @@
-unexpected-stream
-=================
+# unexpected-stream
 
 Node.js stream plugin for the [Unexpected](http://unexpected.js.org/) assertion library (version 7+ required).
 
@@ -10,8 +9,7 @@ Node.js stream plugin for the [Unexpected](http://unexpected.js.org/) assertion 
 
 Read [the documentation](http://unexpected.js.org/unexpected-stream/).
 
-License
--------
+## License
 
 Unexpected-stream is licensed under a standard 3-clause BSD license -- see
 the `LICENSE` file for details.

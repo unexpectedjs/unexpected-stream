@@ -27,7 +27,7 @@ return expect(
     0x02,
     0x00,
     0x00,
-    0x00
+    0x00,
   ]),
   'when piped through',
   require('zlib').Gunzip(),

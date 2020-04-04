@@ -6,8 +6,6 @@ The chunks are made available as an array with entries corresponding to the `dat
 return expect(
   require('fs').createReadStream('README.md'),
   'to yield chunks satisfying',
-  [
-    expect.it('when decoded as', 'ascii', 'to contain', 'stream plugin')
-  ]
+  [expect.it('when decoded as', 'ascii', 'to contain', 'stream plugin')]
 );
 ```

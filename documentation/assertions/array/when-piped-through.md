@@ -46,7 +46,7 @@ as the fulfillment value of the promise:
 
 ```js
 var zlib = require('zlib');
-return expect('foobar', 'piped through', zlib.Gzip()).then(function(
+return expect('foobar', 'piped through', zlib.Gzip()).then(function (
   targetStream
 ) {
   return expect(targetStream, 'to be a', zlib.Gzip);

@@ -3,7 +3,8 @@ Asserts that a stream emits the 'error' event with a value [satisfying](http://u
 ```js#async:true
 return expect(
   require('fs').createReadStream('nonexistent.md'),
-  'to error with', /ENOENT/
+  'to error with',
+  /ENOENT/
 );
 ```
 
@@ -12,7 +13,8 @@ If the stream does not fail, the assertion will fail:
 ```js#async:true
 return expect(
   require('fs').createReadStream('README.md'),
-  'to error with', new Error('foobar')
+  'to error with',
+  new Error('foobar')
 );
 ```
 
