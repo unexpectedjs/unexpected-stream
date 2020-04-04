@@ -25,7 +25,7 @@
     "unexpected-markdown": "^5.0.0"
   },
   "scripts": {
-    "lint": "eslint . && prettier --check '**/*.js'",
+    "lint": "eslint . && prettier --check '**/*.{js,md}'",
     "test": "mocha ./documentation/**/*.md ./test/**/*.js",
     "ci": "npm test && npm run coverage && npm run lint && <coverage/lcov.info coveralls",
     "coverage": "NODE_ENV=development nyc --reporter=lcov --reporter=text --all -- npm test && echo google-chrome coverage/lcov-report/index.html",
