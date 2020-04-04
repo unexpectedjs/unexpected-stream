@@ -27,8 +27,8 @@
   "scripts": {
     "lint": "eslint . && prettier --check '**/*.{js,md}'",
     "test": "mocha ./documentation/**/*.md ./test/**/*.js",
-    "ci": "npm test && npm run coverage && npm run lint && <coverage/lcov.info coveralls",
-    "coverage": "NODE_ENV=development nyc --reporter=lcov --reporter=text --all -- npm test && echo google-chrome coverage/lcov-report/index.html",
+    "ci": "npm run coverage",
+    "coverage": "nyc --reporter=lcov --reporter=text --all -- npm test && echo google-chrome coverage/lcov-report/index.html",
     "generate-site": "generate-site --require ./bootstrap-unexpected-markdown.js",
     "update-examples": "generate-site --require ./bootstrap-unexpected-markdown.js --update-examples",
     "deploy-site": "deploy-site.sh"
