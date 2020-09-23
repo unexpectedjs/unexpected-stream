@@ -7,9 +7,9 @@
     <link rel="stylesheet" href="../../../static/normalize.css" type="text/css" media="screen" />
     <link rel="stylesheet" href="../../../static/main.css" type="text/css" media="screen" />
     <link rel="shortcut icon" type="image/vnd.microsoft.icon" href="../../../static/bug-icon-black.ico">
-    <title>Stream - to yield chunks satisfying</title>
+    <title>to yield chunks satisfying (Stream)</title>
 </head>
-<body class="sidebar-hidden has-sidebar"> 
+<body class="sidebar-hidden has-sidebar">
     <header>
         <div class="logo-icon"></div>
         <nav>
@@ -18,10 +18,10 @@
                     <button class="menu-toggle" onclick="toggleSidebar()"></button>
                 </li>
                 
-                <li class=""><a href="../../..">unexpected-stream</a></li>
+                <li class=""><a href="../../../">unexpected-stream</a></li>
                 
                 
-                <li class="active"><a href="../../string/when-piped-through">Assertions</a></li>
+                <li class="active"><a href="../../string/when-piped-through/">Assertions</a></li>
                 
                 
                 
@@ -38,54 +38,54 @@
 <section id="assertions">
     <nav id="assertion-menu" class="sidebar js-remember-scroll-position">
     
-        <h3 class=""><a href="../../string">string</a></h3>
+        <h3 class=""><a href="../../string/">string</a></h3>
         <ul>
             
             <li class="">
-                <a href="../../string/when-piped-through">when piped through</a>
+                <a href="../../string/when-piped-through/">when piped through</a>
             </li>
             
         </ul>
     
-        <h3 class=""><a href="..">Stream</a></h3>
+        <h3 class=""><a href="../">Stream</a></h3>
         <ul>
             
             <li class="">
-                <a href="../to-error">to error</a>
+                <a href="../to-error/">to error</a>
             </li>
             
             <li class="">
-                <a href="../to-error-with">to error with</a>
+                <a href="../to-error-with/">to error with</a>
             </li>
             
             <li class="active">
-                <a href="">to yield chunks satisfying</a>
+                <a href="./">to yield chunks satisfying</a>
             </li>
             
             <li class="">
-                <a href="../to-yield-output-satisfying">to yield output satisfying</a>
+                <a href="../to-yield-output-satisfying/">to yield output satisfying</a>
             </li>
             
             <li class="">
-                <a href="../when-piped-through">when piped through</a>
-            </li>
-            
-        </ul>
-    
-        <h3 class=""><a href="../../array">array</a></h3>
-        <ul>
-            
-            <li class="">
-                <a href="../../array/when-piped-through">when piped through</a>
+                <a href="../when-piped-through/">when piped through</a>
             </li>
             
         </ul>
     
-        <h3 class=""><a href="../../Buffer">Buffer</a></h3>
+        <h3 class=""><a href="../../array/">array</a></h3>
         <ul>
             
             <li class="">
-                <a href="../../Buffer/when-piped-through">when piped through</a>
+                <a href="../../array/when-piped-through/">when piped through</a>
+            </li>
+            
+        </ul>
+    
+        <h3 class=""><a href="../../Buffer/">Buffer</a></h3>
+        <ul>
+            
+            <li class="">
+                <a href="../../Buffer/when-piped-through/">when piped through</a>
             </li>
             
         </ul>
@@ -94,8 +94,8 @@
 
     <div class="main" tabindex="-1">
         <div class="content">
-            <h1>to yield chunks satisfying</h1>
             
+                <h1>to yield chunks satisfying</h1>
                 <ul class="declarations">
                 
                     <li>&lt;Stream&gt; to yield (output|chunks|objects) satisfying &lt;assertion&gt;</li>
@@ -106,15 +106,7 @@
             
             <p>Asserts that a stream produces output chunks <a href="http://unexpected.js.org/assertions/any/to-satisfy/">satisfying</a> a spec.</p>
 <p>The chunks are made available as an array with entries corresponding to the <code>data</code> events emitted by the stream.</p>
-<div class="code lang-javascript">
-  <div><span style="color: #a71d5d">return</span>&nbsp;<span style="color: #000000">expect</span><span style="color: #000000">(</span></div>
-  <div>&nbsp;&nbsp;<span style="color: #000000">require</span><span style="color: #000000">(</span><span style="color: #df5000">'fs'</span><span style="color: #000000">).</span><span style="color: #000000">createReadStream</span><span style="color: #000000">(</span><span style="color: #df5000">'README.md'</span><span style="color: #000000">),</span></div>
-  <div>&nbsp;&nbsp;<span style="color: #df5000">'to&nbsp;yield&nbsp;chunks&nbsp;satisfying'</span><span style="color: #000000">,</span></div>
-  <div>&nbsp;&nbsp;<span style="color: #000000">[</span></div>
-  <div>&nbsp;&nbsp;&nbsp;&nbsp;expect<span style="color: #000000">.</span><span style="color: #000000">it</span><span style="color: #000000">(</span><span style="color: #df5000">'when&nbsp;decoded&nbsp;as'</span><span style="color: #000000">,</span>&nbsp;<span style="color: #df5000">'ascii'</span><span style="color: #000000">,</span>&nbsp;<span style="color: #df5000">'to&nbsp;contain'</span><span style="color: #000000">,</span>&nbsp;<span style="color: #df5000">'stream&nbsp;plugin'</span><span style="color: #000000">)</span></div>
-  <div>&nbsp;&nbsp;<span style="color: #000000">]</span></div>
-  <div><span style="color: #000000">);</span></div>
-</div>
+<div class="code lang-javascript"><div><span style="color: #a71d5d">return</span>&nbsp;<span style="color: #000000">expect</span><span style="color: #000000">(</span></div><div>&nbsp;&nbsp;<span style="color: #000000">require</span><span style="color: #000000">(</span><span style="color: #df5000">'fs'</span><span style="color: #000000">).</span><span style="color: #000000">createReadStream</span><span style="color: #000000">(</span><span style="color: #df5000">'README.md'</span><span style="color: #000000">),</span></div><div>&nbsp;&nbsp;<span style="color: #df5000">'to&nbsp;yield&nbsp;chunks&nbsp;satisfying'</span><span style="color: #000000">,</span></div><div>&nbsp;&nbsp;<span style="color: #000000">[</span>expect<span style="color: #000000">.</span><span style="color: #000000">it</span><span style="color: #000000">(</span><span style="color: #df5000">'when&nbsp;decoded&nbsp;as'</span><span style="color: #000000">,</span>&nbsp;<span style="color: #df5000">'ascii'</span><span style="color: #000000">,</span>&nbsp;<span style="color: #df5000">'to&nbsp;contain'</span><span style="color: #000000">,</span>&nbsp;<span style="color: #df5000">'stream&nbsp;plugin'</span><span style="color: #000000">)]</span></div><div><span style="color: #000000">);</span></div></div>
         </div>
     </div>
 </section>
