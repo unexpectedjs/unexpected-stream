@@ -47,6 +47,10 @@ return expect(
 );
 ```
 
+## Releases
+
+[Changelog](https://github.com/unexpectedjs/unexpected-stream/blob/master/CHANGELOG.md)
+
 ## License
 
 Unexpected-stream is licensed under a standard 3-clause BSD license -- see
