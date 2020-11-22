@@ -1,3 +1,34 @@
+### v5.0.0 (2020-11-22)
+
+#### Pull requests
+
+- [#48](https://github.com/unexpectedjs/unexpected-stream/pull/48) Upgrade eslint-config-standard to version 16.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#47](https://github.com/unexpectedjs/unexpected-stream/pull/47) Upgrade eslint-config-standard to version 15.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#42](https://github.com/unexpectedjs/unexpected-stream/pull/42) Upgrade prettier to version 2.1.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#40](https://github.com/unexpectedjs/unexpected-stream/pull/40) Upgrade eslint-plugin-mocha to version 8.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#34](https://github.com/unexpectedjs/unexpected-stream/pull/34) Upgrade eslint-plugin-mocha to version 7.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#33](https://github.com/unexpectedjs/unexpected-stream/pull/33) Upgrade eslint to version 7.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#30](https://github.com/unexpectedjs/unexpected-stream/pull/30) Upgrade mocha to version 7.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#29](https://github.com/unexpectedjs/unexpected-stream/pull/29) Upgrade unexpected-markdown to version 5.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#28](https://github.com/unexpectedjs/unexpected-stream/pull/28) Upgrade eslint-plugin-node to version 11.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#27](https://github.com/unexpectedjs/unexpected-stream/pull/27) Upgrade nyc to version 15.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#26](https://github.com/unexpectedjs/unexpected-stream/pull/26) Upgrade eslint-plugin-node to version 10.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#25](https://github.com/unexpectedjs/unexpected-stream/pull/25) Upgrade eslint-config-standard to version 14.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#24](https://github.com/unexpectedjs/unexpected-stream/pull/24) Upgrade eslint-plugin-mocha to version 6.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#23](https://github.com/unexpectedjs/unexpected-stream/pull/23) Upgrade eslint-config-standard to version 13.0.1 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#22](https://github.com/unexpectedjs/unexpected-stream/pull/22) Upgrade eslint-config-prettier to version 6.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#21](https://github.com/unexpectedjs/unexpected-stream/pull/21) Upgrade unexpected-markdown to version 4.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#19](https://github.com/unexpectedjs/unexpected-stream/pull/19) Upgrade eslint-config-prettier to version 5.0.0 ([depfu[bot]](mailto:depfu[bot]@users.noreply.github.com))
+
+#### Commits to master
+
+- [Add CHANGELOG.md + offline-github-changelog integration](https://github.com/unexpectedjs/unexpected-stream/commit/dbe5d5aca53629b7e6d7c1c8717bd8d3850c7551) ([Andreas Lind](mailto:andreaslindpetersen@gmail.com))
+- [Update mocha to ^8.2.1, switch to .mocharc.json](https://github.com/unexpectedjs/unexpected-stream/commit/5df950954afba13a8f28d1c05a4e9cb072888ae1) ([Andreas Lind](mailto:andreaslindpetersen@gmail.com))
+- [Drop node.js 8 support, add 14, lint with 14 \(semver-major\)](https://github.com/unexpectedjs/unexpected-stream/commit/978007e96210b3c5ae81f4834679f17f419d9b21) ([Andreas Lind](mailto:andreaslindpetersen@gmail.com))
+- [Accept unexpected ^12.0.0 as a peer dep](https://github.com/unexpectedjs/unexpected-stream/commit/f2f5ba576271c4c20a5d70606abce141ac55e9f5) ([Andreas Lind](mailto:andreaslindpetersen@gmail.com))
+- [Update unexpected to ^12.0.0](https://github.com/unexpectedjs/unexpected-stream/commit/dca8ca69351229329f656a182d8250da8b4adfa8) ([Andreas Lind](mailto:andreaslindpetersen@gmail.com))
+- [+10 more](https://github.com/unexpectedjs/unexpected-stream/compare/v4.0.0...v5.0.0)
+
 ### v4.0.0 (2019-05-21)
 
 #### Pull requests

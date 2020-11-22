@@ -1,6 +1,6 @@
 {
   "name": "unexpected-stream",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "node.js streams plugin for the Unexpected assertion library",
   "main": "lib/unexpectedStream.js",
   "peerDependencies": {
