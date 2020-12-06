@@ -3,7 +3,7 @@
 Node.js stream plugin for the [Unexpected](http://unexpected.js.org/) assertion library (version 7+ required).
 
 [![NPM version](https://badge.fury.io/js/unexpected-stream.svg)](http://badge.fury.io/js/unexpected-stream)
-[![Build Status](https://travis-ci.org/unexpectedjs/unexpected-stream.svg?branch=master)](https://travis-ci.org/unexpectedjs/unexpected-stream)
+[![Build Status](https://github.com/unexpectedjs/unexpected-stream/workflows/Tests/badge.svg)](https://github.com/unexpectedjs/unexpected-stream)
 [![Coverage Status](https://coveralls.io/repos/unexpectedjs/unexpected-stream/badge.svg)](https://coveralls.io/r/unexpectedjs/unexpected-stream)
 [![Dependency Status](https://david-dm.org/unexpectedjs/unexpected-stream.svg)](https://david-dm.org/unexpectedjs/unexpected-stream)
 

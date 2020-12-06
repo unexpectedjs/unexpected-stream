@@ -8,7 +8,6 @@
   },
   "devDependencies": {
     "base64-stream": "^1.0.0",
-    "coveralls": "^3.0.0",
     "eslint": "^7.0.0",
     "eslint-config-prettier": "^6.0.0",
     "eslint-config-standard": "^16.0.0",
@@ -27,8 +26,8 @@
   },
   "scripts": {
     "lint": "eslint . && prettier --check '**/*.{js,md}'",
-    "test": "mocha ./documentation/**/*.md ./test/**/*.js",
-    "test:ci": "npm run coverage",
+    "test": "mocha ./test/**/*.js",
+    "test-docs": "mocha ./documentation/**/*.md",
     "coverage": "nyc --reporter=lcov --reporter=text --all -- npm test && echo google-chrome coverage/lcov-report/index.html",
     "generate-site": "generate-site --require ./bootstrap-unexpected-markdown.js",
     "update-examples": "generate-site --require ./bootstrap-unexpected-markdown.js --update-examples",
