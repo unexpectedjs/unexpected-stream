@@ -1,3 +1,26 @@
+### v5.0.0 (2022-04-28)
+
+#### Pull requests
+
+- [#75](https://github.com/unexpectedjs/unexpected-stream/pull/75) Upgrade eslint-plugin-mocha to version 10.0.1 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#74](https://github.com/unexpectedjs/unexpected-stream/pull/74) Upgrade prettier to version 2.5.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#73](https://github.com/unexpectedjs/unexpected-stream/pull/73) Upgrade eslint to version 8.1.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#72](https://github.com/unexpectedjs/unexpected-stream/pull/72) Upgrade eslint-plugin-promise to version 5.1.1 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#68](https://github.com/unexpectedjs/unexpected-stream/pull/68) Upgrade prettier to version 2.4.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#62](https://github.com/unexpectedjs/unexpected-stream/pull/62) Upgrade eslint-plugin-mocha to version 9.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#54](https://github.com/unexpectedjs/unexpected-stream/pull/54) Upgrade eslint-config-prettier to version 7.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#52](https://github.com/unexpectedjs/unexpected-stream/pull/52) Upgrade eslint-plugin-standard to version 5.0.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [#50](https://github.com/unexpectedjs/unexpected-stream/pull/50) Upgrade prettier to version 2.2.0 ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+
+#### Commits to master
+
+- [Update unexpected the dev dep to ^13.0.0, allow ^13.0.0 for the peer dep](https://github.com/unexpectedjs/unexpected-stream/commit/0b250c994ac88c56d802936a13a9f12862c429e3) ([Andreas Lind](mailto:andreaslindpetersen@gmail.com))
+- [Fix eslint-disable-next-line annotation](https://github.com/unexpectedjs/unexpected-stream/commit/34fd80770a6cbd4d97be8414e623583e96f056b6) ([Andreas Lind](mailto:andreas.lind@workday.com))
+- [npm i --save-dev eslint-plugin-n eslint-config-standard@latest && npm uninstall eslint-plugin-node eslint-plugin-standard](https://github.com/unexpectedjs/unexpected-stream/commit/e5ecfc426c3b17b0ff383a12aa124392941d530a) ([Andreas Lind](mailto:andreas.lind@workday.com))
+- [Update eslint-plugin-promise to version 6.0.0](https://github.com/unexpectedjs/unexpected-stream/commit/cd47e56f1d419aaa0b150a326dadf8497d2f27fd) ([depfu[bot]](mailto:23717796+depfu[bot]@users.noreply.github.com))
+- [prettier --write '\*\*\/\*.js'](https://github.com/unexpectedjs/unexpected-stream/commit/4db14ad0d48ab39aafe84e26d9072bb3bdf966e2) ([Andreas Lind](mailto:andreas.lind@workday.com))
+- [+4 more](https://github.com/unexpectedjs/unexpected-stream/compare/v5.0.0...v5.0.0)
+
 ### v5.0.0 (2020-11-22)
 
 #### Pull requests
